@@ -10,7 +10,7 @@ export default function Hero() {
         height={1000}
         loading="eager"
       />
-      <div className="space-y-6 px-32">
+      <div className="space-y-8 px-32">
         <h3 className="font-doto font-bold text-stone-500 text-3xl">
           Overview
         </h3>
