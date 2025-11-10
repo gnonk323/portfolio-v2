@@ -35,7 +35,7 @@ export function ProjectCard({
   );
 }
 
-export function TechStackCard({
+export function TechStackBadge({
   name,
   svgPath,
   icon,
@@ -72,8 +72,8 @@ export function FeatureCard({
       onClick={onClickAction}
     >
       <div className="space-y-4">
-        <h4 className="text-2xl font-bold">{title}</h4>
-        <p className="">{description}</p>
+        <h4 className="text-xl font-bold">{title}</h4>
+        <p>{description}</p>
       </div>
       <div className="flex justify-end mt-4">
         <p className="flex items-center gap-1 text-sky-600 font-semibold">

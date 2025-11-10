@@ -16,64 +16,60 @@ export default function FeatureSection() {
   const [selectedFeature, setSelectedFeature] = useState<Feature | null>(null);
 
   return (
-    <section className="min-h-screen snap-start flex items-center justify-center bg-background font-sans relative z-10 p-8 overflow-hidden">
-      <AnimatePresence mode="wait">
-        {!selectedFeature ? (
-          <motion.div
-            key="features"
-            className="max-w-7xl w-full space-y-12"
-            initial={{ x: -200, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: -200, opacity: 0 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-          >
-            <h3 className="font-doto font-bold text-stone-400 text-3xl">
-              Key Features
-            </h3>
-            <div className="grid grid-cols-2 gap-8">
-              <FeatureCard
-                title="Service Requests"
-                description="Authenticated hospital staff can send various service requests."
-                onClickAction={() =>
-                  setSelectedFeature(Feature.ServiceRequests)
-                }
-              />
-              <FeatureCard
-                title="Pathfinding"
-                description="Multi-floor map navigation system to help patients and visitors find their way around the hospital."
-                onClickAction={() => setSelectedFeature(Feature.Pathfinding)}
-              />
-              <FeatureCard
-                title="Map Editing"
-                description="Admin users can edit the map nodes and edges of the hospital
+    <AnimatePresence mode="wait">
+      {!selectedFeature ? (
+        <motion.div
+          key="features"
+          className="max-w-7xl w-full space-y-12"
+          initial={{ x: -200, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: -200, opacity: 0 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+        >
+          <h3 className="font-doto font-bold text-stone-500 text-3xl">
+            Key Features
+          </h3>
+          <div className="grid grid-cols-2 gap-8">
+            <FeatureCard
+              title="Service Requests"
+              description="Authenticated hospital staff can send various service requests."
+              onClickAction={() => setSelectedFeature(Feature.ServiceRequests)}
+            />
+            <FeatureCard
+              title="Pathfinding"
+              description="Multi-floor map navigation system to help patients and visitors find their way around the hospital."
+              onClickAction={() => setSelectedFeature(Feature.Pathfinding)}
+            />
+            <FeatureCard
+              title="Map Editing"
+              description="Admin users can edit the map nodes and edges of the hospital
                 map through a table interface, or by dragging and dropping on
                 the map."
-                onClickAction={() => setSelectedFeature(Feature.MapEditing)}
-              />
-              <FeatureCard
-                title="Admin Dashboard"
-                description="Service request management and statistics."
-                onClickAction={() => setSelectedFeature(Feature.AdminDashboard)}
-              />
-            </div>
-          </motion.div>
-        ) : (
-          <motion.div
-            key="selected"
-            initial={{ x: 200, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: 200, opacity: 0 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="w-full max-w-5xl"
-          >
-            <FeatureSelected
-              feature={selectedFeature}
-              back={() => setSelectedFeature(null)}
+              onClickAction={() => setSelectedFeature(Feature.MapEditing)}
             />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </section>
+            <FeatureCard
+              title="Admin Dashboard"
+              description="Service request management and statistics."
+              onClickAction={() => setSelectedFeature(Feature.AdminDashboard)}
+            />
+          </div>
+        </motion.div>
+      ) : (
+        <motion.div
+          key="selected"
+          initial={{ x: 200, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: 200, opacity: 0 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+          className="w-full max-w-5xl"
+        >
+          <FeatureSelected
+            feature={selectedFeature}
+            back={() => setSelectedFeature(null)}
+          />
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
 
@@ -94,8 +90,8 @@ function FeatureSelected({
         All Features
       </button>
       <div>
-        <h2 className="font-doto font-bold text-3xl text-stone-400">Feature</h2>
-        <h3 className="text-5xl font-bold">{feature}</h3>
+        <h2 className="font-doto font-bold text-2xl text-stone-500">Feature</h2>
+        <h3 className="text-3xl font-bold">{feature}</h3>
       </div>
       {(() => {
         switch (feature) {
@@ -134,12 +130,9 @@ function ServiceRequestSection() {
         <img
           src={"/images/kiosk/dashboard-demo.gif"}
           alt="Service Requests Demo"
-          className="w-full mb-4"
+          className="w-full"
         />
       </div>
-      <p className="italic text-stone-400">
-        I know the quality is really bad I&apos;m sorry :(
-      </p>
     </>
   );
 }
@@ -201,9 +194,6 @@ function PathfindingSection() {
                   transition={{ duration: 0.5 }}
                 />
               </div>
-              <p className="italic text-stone-400 mt-4">
-                I know the quality is really bad I&apos;m sorry :(
-              </p>
             </>
           )}
         </div>

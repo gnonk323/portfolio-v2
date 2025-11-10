@@ -2,13 +2,34 @@
 
 import ParticlesBackground from "@/components/ParticlesBackground";
 import { ProjectCard } from "@/components/Cards";
-import Image from "next/image";
-import { Mail, FileUser, ArrowUpRight, ArrowDown } from "lucide-react";
-import { Button } from "@/components/Button";
-import Link from "next/link";
+import { ArrowUpRight, ArrowDown } from "lucide-react";
 import ContactFooter from "@/components/ContactFooter";
+import { useState, useEffect } from "react";
+import { motion } from "motion/react";
 
 export default function Home() {
+  const [clickCount, setClickCount] = useState(0);
+  const [stache, setStache] = useState(false);
+
+  const handleImageClick = () => {
+    setClickCount((prev) => {
+      const newCount = prev + 1;
+      if (newCount === 5) {
+        setStache(true);
+      }
+      return newCount;
+    });
+  };
+
+  useEffect(() => {
+    if (clickCount > 0 && clickCount < 5) {
+      const timer = setTimeout(() => {
+        setClickCount(0);
+      }, 2000);
+      return () => clearTimeout(timer); // Cleanup the timer on unmount or when clickCount changes
+    }
+  }, [clickCount]);
+
   return (
     <>
       <ParticlesBackground />
@@ -47,7 +68,7 @@ export default function Home() {
             <ArrowUpRight className="w-4 h-4" />
           </a>
           <button
-            className="py-1 px-3 rounded-full border border-background cursor-pointer hover:bg-background hover:text-foreground transition-colors"
+            className="cursor-pointer hover:underline"
             onClick={() =>
               document
                 .getElementById("contact")
@@ -69,7 +90,15 @@ export default function Home() {
           <ArrowDown className="mt-16 animate-bounce" />
         </div>
         <div id="projects" className="bg-background p-8">
-          <h2 className="font-doto font-bold text-3xl">PROJECTS</h2>
+          <div className="flex items-center justify-between">
+            <h2 className="font-doto font-bold text-3xl">PROJECTS</h2>
+            <a href="https://github.com/gnonk323/portfolio-v2" target="_blank">
+              <button className="flex items-center gap-2 cursor-pointer px-3 py-1 hover:bg-stone-300 transition-colors rounded-full border border-stone-300">
+                This site is open source on GitHub!
+                <ArrowUpRight size={16} />
+              </button>
+            </a>
+          </div>
           <div className="grid lg:grid-cols-4 grid-cols-2 gap-6 my-12">
             {/*<ProjectCard
               title="Dual-Portal Automotive Repair Management System"
@@ -108,12 +137,16 @@ export default function Home() {
         <div id="about" className="bg-background p-8">
           <h2 className="font-doto font-bold text-3xl">ABOUT ME</h2>
           <div className="flex items-center justify-center my-12">
-            <Image
-              src={"/images/gustave-montana.jpg"}
+            <motion.img
+              onClick={handleImageClick}
+              src={
+                stache
+                  ? "/images/gustave-montana-stache.jpg"
+                  : "/images/gustave-montana.jpg"
+              }
               alt="Me"
-              width={400}
-              height={400}
               className="mr-8 rounded"
+              whileTap={{ scale: 0.96 }}
             />
             <div className="max-w-3xl space-y-6">
               <p>
