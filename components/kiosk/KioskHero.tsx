@@ -8,6 +8,7 @@ export default function Hero() {
         alt="Kiosk Dashboard"
         width={1000}
         height={1000}
+        loading="eager"
       />
       <div className="space-y-6 px-32">
         <h3 className="font-doto font-bold text-stone-500 text-3xl">

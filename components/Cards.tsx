@@ -68,7 +68,7 @@ export function FeatureCard({
 }) {
   return (
     <div
-      className="flex flex-col justify-between p-6 border border-stone-300 rounded cursor-pointer hover:bg-stone-200 transition-colors"
+      className="flex flex-col justify-between p-6 border border-stone-300 rounded cursor-pointer hover:bg-stone-200 transition-all hover:ring-4 hover:ring-stone-300"
       onClick={onClickAction}
     >
       <div className="space-y-4">
@@ -81,6 +81,16 @@ export function FeatureCard({
           <ArrowRight className="h-4 w-4" />
         </p>
       </div>
+    </div>
+  );
+}
+
+export function DemoVideo({ src }: { src: string }) {
+  return (
+    <div className="bg-stone-300 rounded p-2">
+      <video autoPlay loop muted className="w-full rounded">
+        <source src={src} />
+      </video>
     </div>
   );
 }

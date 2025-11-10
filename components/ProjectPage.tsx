@@ -64,9 +64,7 @@ export default function ProjectPage({
               PROJECT
             </h2>
             <div className="flex items-center justify-between">
-              <h1 className="font-bold text-5xl">
-                Kiosk for Brigham and Women&apos;s Hospital
-              </h1>
+              <h1 className="font-bold text-5xl">{title}</h1>
               <div className="flex items-center gap-4">
                 {links.map((link, i) => (
                   <a

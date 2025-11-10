@@ -1,7 +1,4 @@
-"use client";
-
 import {
-  ArrowRight,
   Lightbulb,
   ChevronRight,
   CircleQuestionMark,
@@ -12,11 +9,11 @@ import {
   Crown,
 } from "lucide-react";
 import * as si from "simple-icons";
-import FeatureSection from "@/components/kiosk/FeatureSection";
-import Link from "next/link";
+import KioskFeatureSection from "@/components/kiosk/KioskFeatureSection";
+import { NextProjectButton } from "@/components/Button";
 
 import ProjectPage from "@/components/ProjectPage";
-import Hero from "@/components/kiosk/Hero";
+import Hero from "@/components/kiosk/KioskHero";
 
 export default function KioskPage() {
   const techStack: { name: string; icon?: si.SimpleIcon }[] = [
@@ -87,7 +84,7 @@ export default function KioskPage() {
         </div>
       </div>
 
-      <FeatureSection />
+      <KioskFeatureSection />
 
       <div className="max-w-7xl w-full space-y-12">
         <h3 className="font-doto font-bold text-stone-500 text-3xl">
@@ -143,18 +140,8 @@ export default function KioskPage() {
             Overall, I’m really proud of the work we did!
           </p>
         </div>
-        <Link href={"/dct"}>
-          <div className="rounded border border-stone-300 p-6 mt-16 flex items-center justify-between hover:-rotate-2 transition-all cursor-pointer hover:bg-stone-200">
-            <div>
-              <p className="font-semibold text-lg">Next Project</p>
-              <p>IQP Data Collection Tool</p>
-            </div>
-            <div className="text-sky-600 font-semibold flex items-center gap-2">
-              Keep Going
-              <ArrowRight size={16} />
-            </div>
-          </div>
-        </Link>
+
+        <NextProjectButton name="WPI IQP Data Collection Tool" href={"/dct"} />
       </div>
     </ProjectPage>
   );

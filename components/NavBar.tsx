@@ -19,7 +19,9 @@ export default function NavBar({
     <>
       <div className="font-sans fixed top-0 w-screen py-4 px-8 flex items-center justify-between z-20 bg-background/20 backdrop-blur-md">
         <div className="flex items-center gap-4">
-          <h1 className="font-bold font-doto text-xl">Gustave Montana</h1>
+          <Link className="font-bold font-doto text-xl" href="/">
+            Gustave Montana
+          </Link>
           {showProjectTitle && (
             <motion.div
               initial={{ opacity: 0 }}
