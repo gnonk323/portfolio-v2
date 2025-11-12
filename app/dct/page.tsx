@@ -55,7 +55,7 @@ export default function DCTPage() {
         <img
           src={"/images/dct/monteverde.jpeg"}
           alt="Monteverde, Costa Rica"
-          className="rounded w-full h-96 object-cover lg:m-0 mb-8"
+          className="rounded w-full h-96 object-cover mb-8"
         />
         <SubHeading>What is the IQP?</SubHeading>
         <div className="flex lg:gap-8 gap-4">
