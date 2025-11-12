@@ -138,7 +138,7 @@ export default function Home() {
             />
           </div>
           <a href="https://github.com/gnonk323/portfolio-v2" target="_blank">
-            <button className="md:hidden flex items-center gap-2 cursor-pointer px-3 py-1 hover:bg-stone-300 transition-colors rounded-full border border-stone-300">
+            <button className="md:hidden flex items-center gap-2 cursor-pointer px-3 py-1 hover:bg-stone-300 transition-colors rounded-full border border-stone-300 text-sm">
               This site is open source on GitHub!
               <ArrowUpRight size={16} />
             </button>
