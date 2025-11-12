@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <>
       <ParticlesBackground />
-      <div className="font-sans fixed top-0 w-screen py-4 px-8 flex items-center justify-between z-20 mix-blend-difference text-background">
+      <div className="font-sans fixed top-0 w-full py-4 px-8 md:flex items-center justify-between z-20 mix-blend-difference text-background hidden">
         <div>
           <h1 className="font-bold font-doto text-xl">Gustave Montana</h1>
         </div>
@@ -85,7 +85,7 @@ export default function Home() {
       </div>
       <div className="font-sans relative z-10">
         <div className="h-screen flex flex-col items-center justify-center gap-4 text-center text-xl text-background">
-          <div className="text-7xl">
+          <div className="md:text-7xl text-3xl">
             <div className="font-light">HI, MY NAME IS</div>
             <div className="font-bold">GUSTAVE MONTANA</div>
           </div>
@@ -97,7 +97,7 @@ export default function Home() {
           <div className="flex items-center justify-between">
             <h2 className="font-doto font-bold text-3xl">PROJECTS</h2>
             <a href="https://github.com/gnonk323/portfolio-v2" target="_blank">
-              <button className="flex items-center gap-2 cursor-pointer px-3 py-1 hover:bg-stone-300 transition-colors rounded-full border border-stone-300">
+              <button className="md:flex hidden items-center gap-2 cursor-pointer px-3 py-1 hover:bg-stone-300 transition-colors rounded-full border border-stone-300">
                 This site is open source on GitHub!
                 <ArrowUpRight size={16} />
               </button>
@@ -136,11 +136,17 @@ export default function Home() {
               newTab
             />
           </div>
+          <a href="https://github.com/gnonk323/portfolio-v2" target="_blank">
+            <button className="md:hidden flex items-center gap-2 cursor-pointer px-3 py-1 hover:bg-stone-300 transition-colors rounded-full border border-stone-300">
+              This site is open source on GitHub!
+              <ArrowUpRight size={16} />
+            </button>
+          </a>
         </div>
         <div className="h-16" />
         <div id="about" className="bg-background p-8">
           <h2 className="font-doto font-bold text-3xl">ABOUT ME</h2>
-          <div className="flex items-center justify-center my-12">
+          <div className="flex flex-col md:flex-row items-center justify-center my-12">
             <motion.img
               onClick={handleImageClick}
               src={
@@ -149,7 +155,7 @@ export default function Home() {
                   : "/images/gustave-montana.jpg"
               }
               alt="Me"
-              className="mr-8 rounded"
+              className="md:mr-8 rounded mb-8 md:mb-0"
               whileTap={{ scale: 0.96 }}
             />
             <div className="max-w-3xl space-y-6">

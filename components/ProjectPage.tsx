@@ -7,6 +7,7 @@ import ParticlesBackground from "./ParticlesBackground";
 import NavBar from "./NavBar";
 import { ArrowUpRight } from "lucide-react";
 import { TechStackBadge } from "./Cards";
+import { MainHeading, SubHeading } from "./Typography";
 
 interface ProjectPageProps {
   title: string;
@@ -60,11 +61,9 @@ export default function ProjectPage({
           className="min-h-screen snap-start bg-background font-sans relative z-10 p-8 pt-20"
         >
           <div className="space-y-6">
-            <h2 className="font-doto font-bold text-stone-500 text-3xl m-0">
-              PROJECT
-            </h2>
+            <SubHeading className="m-0">PROJECT</SubHeading>
             <div className="flex items-center justify-between">
-              <h1 className="font-bold text-5xl">{title}</h1>
+              <MainHeading>{title}</MainHeading>
               <div className="flex items-center gap-4">
                 {links.map((link, i) => (
                   <a

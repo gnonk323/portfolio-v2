@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@sglara/cn": "^1.0.0",
     "@tsparticles/engine": "^3.9.1",
     "@tsparticles/preset-links": "^3.2.0",
     "@tsparticles/react": "^3.0.0",

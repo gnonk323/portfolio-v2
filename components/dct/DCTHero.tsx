@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { SubHeading } from "../Typography";
 
 export default function Hero() {
   return (
@@ -11,9 +12,7 @@ export default function Hero() {
         loading="eager"
       />
       <div className="space-y-8 px-32">
-        <h3 className="font-doto font-bold text-stone-500 text-3xl">
-          Overview
-        </h3>
+        <SubHeading>Overview</SubHeading>
         <p className="leading-relaxed">
           This project is my capstone, or Major Qualifying Project (MQP) for my
           Computer Science BS degree. It is a comprehensive data collecton

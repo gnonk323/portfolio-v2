@@ -11,6 +11,7 @@ import {
 import * as si from "simple-icons";
 import KioskFeatureSection from "@/components/kiosk/KioskFeatureSection";
 import { NextProjectButton } from "@/components/Button";
+import { SubHeading } from "@/components/Typography";
 
 import ProjectPage from "@/components/ProjectPage";
 import Hero from "@/components/kiosk/KioskHero";
@@ -43,9 +44,7 @@ export default function KioskPage() {
       heroComponent={<Hero />}
     >
       <div className="max-w-7xl w-full space-y-12">
-        <h3 className="font-doto font-bold text-stone-500 text-3xl">
-          Approach
-        </h3>
+        <SubHeading>Approach</SubHeading>
         <p className="leading-relaxed">
           Each team used the <span className="font-semibold">Agile</span>{" "}
           software development approach, with{" "}
@@ -87,9 +86,7 @@ export default function KioskPage() {
       <KioskFeatureSection />
 
       <div className="max-w-7xl w-full space-y-12">
-        <h3 className="font-doto font-bold text-stone-500 text-3xl">
-          Key Takeaways
-        </h3>
+        <SubHeading>Key Takeaways</SubHeading>
         <div className="space-y-6">
           <div className="flex items-start gap-6">
             <Laptop className="w-8 h-8 text-stone-400 shrink-0 mt-1" />

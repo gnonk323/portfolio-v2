@@ -4,6 +4,7 @@ import { useState, ReactNode } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowLeft } from "lucide-react";
 import { FeatureCard } from "./Cards";
+import { SubHeading } from "./Typography";
 
 export interface FeatureItem {
   title: string;
@@ -37,9 +38,7 @@ export default function FeatureSection({
           exit={{ x: -200, opacity: 0 }}
           transition={{ duration: 0.4, ease: "easeInOut" }}
         >
-          <h3 className="font-doto font-bold text-stone-500 text-3xl">
-            {heading}
-          </h3>
+          <SubHeading>{heading}</SubHeading>
           <div className={`grid grid-cols-${columns} gap-8`}>
             {features.map((feature) => (
               <FeatureCard

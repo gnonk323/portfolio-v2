@@ -7,6 +7,7 @@ import DCTFeatureSection from "@/components/dct/DCTFeatureSection";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { NextProjectButton } from "@/components/Button";
+import { SubHeading } from "@/components/Typography";
 
 export default function DCTPage() {
   const techStack: { name: string; icon?: si.SimpleIcon }[] = [
@@ -55,9 +56,7 @@ export default function DCTPage() {
           alt="Monteverde, Costa Rica"
           className="rounded w-full h-96 object-cover"
         />
-        <h3 className="font-doto font-bold text-stone-500 text-3xl">
-          What is the IQP?
-        </h3>
+        <SubHeading>What is the IQP?</SubHeading>
         <div className="flex gap-8">
           <div>
             <p className="text-8xl font-serif">&quot;</p>
@@ -102,9 +101,7 @@ export default function DCTPage() {
 
       <div className="max-w-7xl w-full">
         <div className="space-y-8 mb-16">
-          <h3 className="font-doto font-bold text-stone-500 text-3xl">
-            The Problem
-          </h3>
+          <SubHeading>The Problem</SubHeading>
           <div className="space-y-6 leading-relaxed">
             <p>
               The IQP is a research project, and so it requires students to
@@ -119,9 +116,7 @@ export default function DCTPage() {
           </div>
         </div>
         <div className="space-y-8">
-          <h3 className="font-doto font-bold text-stone-500 text-3xl">
-            UX Research
-          </h3>
+          <SubHeading>UX Research</SubHeading>
           <div className="flex gap-16">
             <div className="space-y-6 leading-relaxed">
               <p>
@@ -146,7 +141,7 @@ export default function DCTPage() {
       <DCTFeatureSection />
 
       <div className="max-w-7xl w-full space-y-8">
-        <h3 className="font-doto font-bold text-stone-500 text-3xl h-10 flex items-center">
+        <SubHeading>
           <AnimatePresence mode="wait">
             <motion.span
               key={selectedImageIndex ?? "default"}
@@ -161,7 +156,7 @@ export default function DCTPage() {
                 : imageGrid[selectedImageIndex].title}
             </motion.span>
           </AnimatePresence>
-        </h3>
+        </SubHeading>
 
         <AnimatePresence mode="wait">
           {selectedImageIndex !== null ? (
@@ -203,9 +198,7 @@ export default function DCTPage() {
 
       <div className="max-w-7xl w-full space-y-12">
         <div className="space-y-8">
-          <h3 className="font-doto font-bold text-stone-500 text-3xl">
-            Closing Notes
-          </h3>
+          <SubHeading>Closing Notes</SubHeading>
           <p className="leading-relaxed">
             This project was a great stepping stone for my full stack
             development skills. I took on a large workload of varying tasks,
