@@ -3,6 +3,7 @@
 import FeatureSection from "../FeatureSection";
 import { useState } from "react";
 import { motion } from "motion/react";
+import { DemoImage } from "../Visuals";
 
 export default function KioskFeatureSection() {
   return (
@@ -29,13 +30,10 @@ export default function KioskFeatureSection() {
                 staff member can also choose to expand the active requests
                 table.
               </p>
-              <div className="p-2 rounded bg-stone-300">
-                <img
-                  src={"/images/kiosk/dashboard-demo.gif"}
-                  alt="Service Requests Demo"
-                  className="w-full"
-                />
-              </div>
+              <DemoImage
+                src="/images/kiosk/dashboard-demo.gif"
+                alt="Service Requests Demo"
+              />
             </>
           ),
         },
@@ -59,12 +57,10 @@ export default function KioskFeatureSection() {
                 edges, and edit the location of nodes by changing their X and Y
                 coordinates.
               </p>
-              <div className="p-2 rounded bg-stone-300">
-                <img
-                  src={"/images/kiosk/map-edit.png"}
-                  alt="Map Editing Screenshot"
-                />
-              </div>
+              <DemoImage
+                src="/images/kiosk/map-edit.png"
+                alt="Map Editing Screenshot"
+              />
             </>
           ),
         },
@@ -81,12 +77,10 @@ export default function KioskFeatureSection() {
                 showing the percentage of requests by any of those same
                 parameters.
               </p>
-              <div className="p-2 rounded bg-stone-300">
-                <img
-                  src={"/images/kiosk/stats.png"}
-                  alt="Admin Dashboard Screenshot"
-                />
-              </div>
+              <DemoImage
+                src="/images/kiosk/stats.png"
+                alt="Admin Dashboard Screenshot"
+              />
             </>
           ),
         },

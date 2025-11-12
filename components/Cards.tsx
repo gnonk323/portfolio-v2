@@ -84,13 +84,3 @@ export function FeatureCard({
     </div>
   );
 }
-
-export function DemoVideo({ src }: { src: string }) {
-  return (
-    <div className="bg-stone-300 rounded p-2">
-      <video autoPlay loop muted className="w-full rounded">
-        <source src={src} />
-      </video>
-    </div>
-  );
-}

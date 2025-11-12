@@ -94,11 +94,11 @@ export default function KioskPage() {
           <div className="flex items-start gap-6">
             <Laptop className="w-8 h-8 text-stone-400 shrink-0 mt-1" />
             <div>
-              <h4 className="text-xl font-bold mb-2">Full-Stack Development</h4>
+              <h4 className="text-xl font-bold mb-2">Full Stack Development</h4>
               <p>
                 Although I focused on front-end, I spent time interacting with
                 the back-end and I got a lot of valuable experience with
-                creating full-stack features.
+                creating full stack features.
               </p>
             </div>
           </div>
@@ -128,7 +128,7 @@ export default function KioskPage() {
         <div>
           <p className="leading-relaxed">
             All in all, this project was an incredible learning experience for
-            me! It was the first time I took on a large full-stack application
+            me! It was the first time I took on a large full stack application
             like this, and working in a team this large on a software
             development project was a first too. I got the chance to take on a
             leadership role, and I learned a lot about the Agile software

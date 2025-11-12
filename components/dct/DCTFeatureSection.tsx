@@ -1,5 +1,5 @@
 import FeatureSection from "../FeatureSection";
-import { DemoVideo } from "../Cards";
+import { DemoVideo } from "../Visuals";
 
 export default function DCTFeatureSection() {
   return (

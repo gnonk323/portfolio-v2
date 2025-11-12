@@ -207,7 +207,7 @@ export default function DCTPage() {
             Closing Notes
           </h3>
           <p className="leading-relaxed">
-            This project was a great stepping stone for my full-stack
+            This project was a great stepping stone for my full stack
             development skills. I took on a large workload of varying tasks,
             which gave me a deeper understanding across the stack. It was also a
             great learning experience for development in a remote team, as the

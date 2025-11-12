@@ -6,6 +6,8 @@ import { ArrowUpRight, ArrowDown } from "lucide-react";
 import ContactFooter from "@/components/ContactFooter";
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
+import Link from "next/link";
+import { Button } from "@/components/Button";
 
 export default function Home() {
   const [clickCount, setClickCount] = useState(0);
@@ -58,15 +60,17 @@ export default function Home() {
           >
             Projects
           </button>
-          {/*<a className="cursor-pointer hover:underline">Adventures</a>*/}
-          <a
+          <Link className="cursor-pointer hover:underline" href={"/adventures"}>
+            Adventures
+          </Link>
+          <Link
             className="flex gap-1 items-center cursor-pointer hover:underline"
-            href="/gustave-montana-resume.pdf"
-            target="_blank"
+            href={"/gustave-montana-resume.pdf"}
+            target={"_blank"}
           >
             Resume
             <ArrowUpRight className="w-4 h-4" />
-          </a>
+          </Link>
           <button
             className="cursor-pointer hover:underline"
             onClick={() =>
@@ -86,7 +90,7 @@ export default function Home() {
             <div className="font-bold">GUSTAVE MONTANA</div>
           </div>
           <div className="font-doto">• • •</div>
-          <div className="font-light">Full-Stack Software Engineer</div>
+          <div className="font-light">Full Stack Software Engineer</div>
           <ArrowDown className="mt-16 animate-bounce" />
         </div>
         <div id="projects" className="bg-background p-8">
@@ -182,6 +186,11 @@ export default function Home() {
                 I love to ski, sail, fish, bike, play video games, write code,
                 and learn new things.
               </p>
+              <div>
+                <Link href={"/adventures"}>
+                  <Button>Browse my adventures gallery</Button>
+                </Link>
+              </div>
               <p className="italic">
                 I live in Connecticut and am looking for opportunities in the
                 Boston or New York City areas.

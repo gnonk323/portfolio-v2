@@ -17,7 +17,7 @@ export default function NavBar({
 
   return (
     <>
-      <div className="font-sans fixed top-0 w-screen py-4 px-8 flex items-center justify-between z-20 bg-background/20 backdrop-blur-md">
+      <div className="font-sans fixed top-0 w-screen py-4 px-8 flex items-center justify-between z-20 bg-background/30 backdrop-blur-md">
         <div className="flex items-center gap-4">
           <Link className="font-bold font-doto text-xl" href="/">
             Gustave Montana
@@ -35,23 +35,26 @@ export default function NavBar({
           )}
         </div>
         <div className="flex items-center gap-6">
-          <Link href={"/"} className="cursor-pointer hover:underline">
+          <Link className="cursor-pointer hover:underline" href={"/"}>
             Home
           </Link>
-          <a
+          <Link className="cursor-pointer hover:underline" href={"/adventures"}>
+            Adventures
+          </Link>
+          <Link
             className="flex gap-1 items-center cursor-pointer hover:underline"
-            href="/gustave-montana-resume.pdf"
-            target="_blank"
+            href={"/gustave-montana-resume.pdf"}
+            target={"_blank"}
           >
             Resume
             <ArrowUpRight className="w-4 h-4" />
-          </a>
-          <a
+          </Link>
+          <Button
             className="py-1 px-3 rounded-full border border-foreground cursor-pointer hover:bg-foreground hover:text-background transition-colors"
             onClick={() => setShowContactDialog(true)}
           >
             Contact
-          </a>
+          </Button>
         </div>
       </div>
       {showContactDialog && (

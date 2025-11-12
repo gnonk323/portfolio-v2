@@ -34,9 +34,9 @@ export default function Hero() {
         </div>
         <p className="p-4 rounded border-2 border-amber-400 bg-amber-300/15">
           This was a pet project with a few of my friends! We&apos;ve had a
-          great time building it, but currently the deployment is a little bit
-          broken 😢. If it sounds cool, please reach out to me and I can give
-          you a demo!
+          great time building it, but the deployment is a little bit broken at
+          the moment 😢. If it sounds cool, please reach out to me and I can
+          give you a demo!
         </p>
       </div>
     </div>
