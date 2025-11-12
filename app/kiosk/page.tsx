@@ -62,7 +62,7 @@ export default function KioskPage() {
           went well, what went wrong, what we could have done better, and gave
           shout-outs to team members that went the extra mile.
         </Paragraph>
-        <div className="lg:flex items-center gap-4 text-lg justify-between hidden">
+        <div className="lg:flex items-center gap-4 text-lg justify-between hidden mt-12">
           <div className="p-4 rounded-full font-semibold border border-stone-300 w-[20%] shadow-inner flex items-center justify-center gap-3">
             <CircleQuestionMark size={16} />
             Requirements
@@ -88,7 +88,7 @@ export default function KioskPage() {
 
       <KioskFeatureSection />
 
-      <div className="max-w-7xl w-full lg:space-y-12 space-y-6 lg:m-0 mb-6">
+      <div className="max-w-7xl w-full lg:space-y-12 space-y-6">
         <Separator className="lg:hidden block mb-8" />
         <SubHeading>Key Takeaways</SubHeading>
         <div className="lg:space-y-6 space-y-4">

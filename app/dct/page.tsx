@@ -198,7 +198,7 @@ export default function DCTPage() {
         </AnimatePresence>
       </div>
 
-      <div className="max-w-7xl w-full lg:space-y-12 space-y-8 lg:m-0 mb-6">
+      <div className="max-w-7xl w-full lg:space-y-12 space-y-8">
         <Separator className="lg:hidden block" />
         <div className="lg:space-y-8 space-y-6">
           <SubHeading>Closing Notes</SubHeading>
