@@ -1,19 +1,17 @@
-import Image from "next/image";
-import { SubHeading } from "../Typography";
+import { SubHeading, Paragraph } from "../Typography";
 
 export default function Hero() {
   return (
-    <div className="flex grow justify-between items-center">
-      <Image
+    <div className="flex grow lg:justify-between lg:items-center flex-col lg:flex-row">
+      <img
         src={"/images/dct/dctMOCK.png"}
         alt="DCT Dashboard"
-        width={1000}
-        height={1000}
+        className="max-w-5xl"
         loading="eager"
       />
-      <div className="space-y-8 px-32">
+      <div className="lg:space-y-8 space-y-6 lg:px-32 lg:pt-0 pt-8">
         <SubHeading>Overview</SubHeading>
-        <p className="leading-relaxed">
+        <Paragraph>
           This project is my capstone, or Major Qualifying Project (MQP) for my
           Computer Science BS degree. It is a comprehensive data collecton
           application built for the WPI study abroad research project program,
@@ -21,7 +19,7 @@ export default function Hero() {
           during the summer of 2024, into the first term of the fall semester. I
           worked on a team of 5, using the Agile methodology for software
           development.
-        </p>
+        </Paragraph>
       </div>
     </div>
   );

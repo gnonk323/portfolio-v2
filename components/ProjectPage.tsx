@@ -58,7 +58,7 @@ export default function ProjectPage({
       >
         <section
           ref={heroRef}
-          className="min-h-screen snap-start bg-background font-sans relative z-10 md:p-8 p-4 md:pt-20 pt-16"
+          className="lg:min-h-screen snap-start bg-background font-sans relative z-10 md:p-8 p-4 md:pt-20 pt-16"
         >
           <div className="space-y-6">
             <SubHeading className="m-0">PROJECT</SubHeading>

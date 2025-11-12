@@ -7,7 +7,7 @@ import DCTFeatureSection from "@/components/dct/DCTFeatureSection";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { NextProjectButton } from "@/components/Button";
-import { SubHeading } from "@/components/Typography";
+import { Paragraph, SubHeading } from "@/components/Typography";
 
 export default function DCTPage() {
   const techStack: { name: string; icon?: si.SimpleIcon }[] = [
@@ -50,19 +50,19 @@ export default function DCTPage() {
       ]}
       heroComponent={<Hero />}
     >
-      <div className="max-w-7xl w-full space-y-12">
+      <div className="max-w-7xl w-full lg:space-y-12 space-y-6">
         <img
           src={"/images/dct/monteverde.jpeg"}
           alt="Monteverde, Costa Rica"
-          className="rounded w-full h-96 object-cover"
+          className="rounded w-full h-96 object-cover lg:m-0 mb-8"
         />
         <SubHeading>What is the IQP?</SubHeading>
-        <div className="flex gap-8">
+        <div className="flex lg:gap-8 gap-4">
           <div>
             <p className="text-8xl font-serif">&quot;</p>
           </div>
           <div>
-            <p className="leading-relaxed">
+            <Paragraph className="lg:text-left text-right">
               The{" "}
               <a
                 href="https://www.wpi.edu/project-based-learning/project-based-education/interactive-qualifying-project"
@@ -79,68 +79,66 @@ export default function DCTPage() {
               requirement involves students working in teams, with students not
               in their major, to tackle an issue that relates science,
               engineering, and technology to society.
-            </p>
-            <p className="text-right">- WPI Website</p>
+            </Paragraph>
+            <Paragraph className="text-right italic mt-2">
+              - WPI Website
+            </Paragraph>
           </div>
         </div>
-        <div className="flex items-center justify-around text-center mx-32">
+        <div className="flex items-center justify-around text-center lg:mx-32">
           <div>
-            <p className="font-bold text-5xl">1,200</p>
-            <p>Students/Year</p>
+            <p className="font-bold lg:text-5xl text-2xl">1,200</p>
+            <Paragraph>Students/Year</Paragraph>
           </div>
           <div>
-            <p className="font-bold text-5xl">50+</p>
-            <p>Global Project Centers</p>
+            <p className="font-bold lg:text-5xl text-2xl">50+</p>
+            <Paragraph>Global Project Centers</Paragraph>
           </div>
           <div>
-            <p className="font-bold text-5xl">31</p>
-            <p>Countries</p>
+            <p className="font-bold lg:text-5xl text-2xl">31</p>
+            <Paragraph>Countries</Paragraph>
           </div>
         </div>
       </div>
 
       <div className="max-w-7xl w-full">
-        <div className="space-y-8 mb-16">
+        <div className="lg:space-y-8 space-y-6 lg:mb-16 mb-8">
           <SubHeading>The Problem</SubHeading>
-          <div className="space-y-6 leading-relaxed">
-            <p>
-              The IQP is a research project, and so it requires students to
-              collect qualitative and quantitative data, conduct interviews, and
-              distribute surveys to complete their reports. However, each
-              project varies greatly, in terms of geographical location, subject
-              matter, objective, and of course, research methods. During my IQP
-              in Monteverde, Costa Rica, my group used an array of softwares and
-              websites to conduct our research. This proved complicated and
-              frustrating at times.
-            </p>
-          </div>
+          <Paragraph>
+            The IQP is a research project, and so it requires students to
+            collect qualitative and quantitative data, conduct interviews, and
+            distribute surveys to complete their reports. However, each project
+            varies greatly, in terms of geographical location, subject matter,
+            objective, and of course, research methods. During my IQP in
+            Monteverde, Costa Rica, my group used an array of softwares and
+            websites to conduct our research. This proved complicated and
+            frustrating at times.
+          </Paragraph>
         </div>
-        <div className="space-y-8">
+        <div className="lg:space-y-8 space-y-6">
           <SubHeading>UX Research</SubHeading>
-          <div className="flex gap-16">
-            <div className="space-y-6 leading-relaxed">
-              <p>
-                Before jumping into writing code, we had to conduct some
-                research of our own. As a group, we reviewed 20 previous IQP
-                reports to quantify which research methods were most commonly
-                used, so we would be able to focus our app on the best areas. To
-                minimize error, we peer reviewed each other&apos;s work to
-                ensure accuracy of our findings.
-              </p>
-              <p>
-                We also researched other existing data collection apps, to see
-                what features they had and didn&apos;t have. We found that
-                existing apps lacked features important to IQP students, while
-                having extraneous features geared towards other types of users.
-              </p>
-            </div>
+          <div className="lg:space-y-6 space-y-4 leading-relaxed">
+            <Paragraph>
+              Before jumping into writing code, we had to conduct some research
+              of our own. As a group, we reviewed 20 previous IQP reports to
+              quantify which research methods were most commonly used, so we
+              would be able to focus our app on the best areas. To minimize
+              error, we peer reviewed each other&apos;s work to ensure accuracy
+              of our findings.
+            </Paragraph>
+            <Paragraph>
+              We also researched other existing data collection apps, to see
+              what features they had and didn&apos;t have. We found that
+              existing apps lacked features important to IQP students, while
+              having extraneous features geared towards other types of users.
+            </Paragraph>
           </div>
         </div>
       </div>
 
       <DCTFeatureSection />
 
-      <div className="max-w-7xl w-full space-y-8">
+      <div className="max-w-7xl w-full lg:space-y-8 space-y-6">
         <SubHeading>
           <AnimatePresence mode="wait">
             <motion.span
@@ -196,10 +194,10 @@ export default function DCTPage() {
         </AnimatePresence>
       </div>
 
-      <div className="max-w-7xl w-full space-y-12">
-        <div className="space-y-8">
+      <div className="max-w-7xl w-full lg:space-y-12 space-y-8 lg:m-0 mb-6">
+        <div className="lg:space-y-8 space-y-6">
           <SubHeading>Closing Notes</SubHeading>
-          <p className="leading-relaxed">
+          <Paragraph>
             This project was a great stepping stone for my full stack
             development skills. I took on a large workload of varying tasks,
             which gave me a deeper understanding across the stack. It was also a
@@ -208,7 +206,7 @@ export default function DCTPage() {
             to balance time between this project and my internship, but the
             importance of a robust continuous integration plan is emphasized
             when the team can&apos;t meet in person.
-          </p>
+          </Paragraph>
         </div>
 
         <NextProjectButton name="Consensus" href={"/consensus"} />
