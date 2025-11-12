@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import Link from "next/link";
 import { Button } from "@/components/Button";
+import { Paragraph } from "@/components/Typography";
 
 export default function Home() {
   const [clickCount, setClickCount] = useState(0);
@@ -93,7 +94,7 @@ export default function Home() {
           <div className="font-light">Full Stack Software Engineer</div>
           <ArrowDown className="mt-16 animate-bounce" />
         </div>
-        <div id="projects" className="bg-background p-8">
+        <div id="projects" className="bg-background md:p-8 py-8 px-4">
           <div className="flex items-center justify-between">
             <h2 className="font-doto font-bold text-3xl">PROJECTS</h2>
             <a href="https://github.com/gnonk323/portfolio-v2" target="_blank">
@@ -103,7 +104,7 @@ export default function Home() {
               </button>
             </a>
           </div>
-          <div className="grid lg:grid-cols-4 grid-cols-2 gap-6 my-12">
+          <div className="grid lg:grid-cols-4 grid-cols-2 lg:gap-6 gap-4 my-12">
             {/*<ProjectCard
               title="Dual-Portal Automotive Repair Management System"
               description="App for an auto repair shop in Denver, CO, designed to streamline their repair process and improve transparency with the customer."
@@ -144,9 +145,9 @@ export default function Home() {
           </a>
         </div>
         <div className="h-16" />
-        <div id="about" className="bg-background p-8">
+        <div id="about" className="bg-background md:p-8 py-8 px-4">
           <h2 className="font-doto font-bold text-3xl">ABOUT ME</h2>
-          <div className="flex flex-col md:flex-row items-center justify-center my-12">
+          <div className="flex flex-col lg:flex-row items-center justify-center lg:my-12 mt-6">
             <motion.img
               onClick={handleImageClick}
               src={
@@ -159,7 +160,7 @@ export default function Home() {
               whileTap={{ scale: 0.96 }}
             />
             <div className="max-w-3xl space-y-6">
-              <p>
+              <Paragraph>
                 Welcome to my website, I hope you like it! I graduated from{" "}
                 <a
                   className="hover:underline text-sky-600 cursor-pointer"
@@ -175,32 +176,32 @@ export default function Home() {
                 art and technology, and I really enjoy the challenge of creating
                 something new, unique, and beautiful while keeping it functional
                 and user-friendly.
-              </p>
-              <p>
+              </Paragraph>
+              <Paragraph>
                 I am proficient in front-end and back-end technologies, I
                 specialize in creating solutions using TypeScript, React,
                 Node.js, and related frameworks (Next.js). I have a strong
                 foundation in RESTful APIs and database management.
-              </p>
-              <p>
+              </Paragraph>
+              <Paragraph>
                 I also have experience with Python for machine learning and data
                 analysis. I have worked on projects involving data
                 preprocessing, feature engineering, and model training using
                 libraries such as Pandas, NumPy, Scikit-learn, and TensorFlow.
-              </p>
-              <p>
+              </Paragraph>
+              <Paragraph>
                 I love to ski, sail, fish, bike, play video games, write code,
                 and learn new things.
-              </p>
+              </Paragraph>
               <div>
                 <Link href={"/adventures"}>
                   <Button>Browse my adventures gallery</Button>
                 </Link>
               </div>
-              <p className="italic">
+              <Paragraph className="italic">
                 I live in Connecticut and am looking for opportunities in the
                 Boston or New York City areas.
-              </p>
+              </Paragraph>
             </div>
           </div>
         </div>

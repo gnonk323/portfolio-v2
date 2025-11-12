@@ -4,6 +4,7 @@ import FeatureSection from "../FeatureSection";
 import { useState } from "react";
 import { motion } from "motion/react";
 import { DemoImage } from "../Visuals";
+import { Paragraph } from "../Typography";
 
 export default function KioskFeatureSection() {
   return (
@@ -16,7 +17,7 @@ export default function KioskFeatureSection() {
             "Authenticated hospital staff can send various service requests.",
           content: (
             <>
-              <p>
+              <Paragraph>
                 A core requirement of the application was the ability for a
                 logged-in staff member to be able to use the kiosk to make a
                 service request of their choice, as well as view any active
@@ -29,7 +30,7 @@ export default function KioskFeatureSection() {
                 which is complete with sorting and filtering capabilities. The
                 staff member can also choose to expand the active requests
                 table.
-              </p>
+              </Paragraph>
               <DemoImage
                 src="/images/kiosk/dashboard-demo.gif"
                 alt="Service Requests Demo"
@@ -49,14 +50,14 @@ export default function KioskFeatureSection() {
             "Admin users can edit the map nodes and edges of the hospital map through a table interface, or by dragging and dropping on the map.",
           content: (
             <>
-              <p>
+              <Paragraph>
                 When logged in, admins (not just any staff members) are able to
                 delete all of the map nodes and edges and upload new nodes and
                 edges. They are also able to interact directly with the map,
                 where they can drag nodes and edges, delete individual nodes and
                 edges, and edit the location of nodes by changing their X and Y
                 coordinates.
-              </p>
+              </Paragraph>
               <DemoImage
                 src="/images/kiosk/map-edit.png"
                 alt="Map Editing Screenshot"
@@ -69,14 +70,14 @@ export default function KioskFeatureSection() {
           description: "Service request management and statistics.",
           content: (
             <>
-              <p>
+              <Paragraph>
                 Staff members can view a statistics page, where they can find a
                 wide variety of information breaking down the distribution of
                 the number of requests. There are bar charts showing the number
                 of requests by type, priority, status, and user, and a pie chart
                 showing the percentage of requests by any of those same
                 parameters.
-              </p>
+              </Paragraph>
               <DemoImage
                 src="/images/kiosk/stats.png"
                 alt="Admin Dashboard Screenshot"
@@ -94,7 +95,7 @@ function Pathfinding() {
 
   return (
     <>
-      <p>
+      <Paragraph>
         One of the main features of the application was that it had to be able
         to give the user directions from one point of the hospital to another,
         using a pathfinding algorithm of their choice. It also had to provide
@@ -102,7 +103,7 @@ function Pathfinding() {
         to turn, and which elevators and stairways they should use. My team
         implemented an additional feature which allows the user to scan a QR
         code containing the directions, so they can follow along on their phone.
-      </p>
+      </Paragraph>
       <div>
         <div className="flex items-center gap-4 justify-end">
           <div className="rounded border border-foreground">

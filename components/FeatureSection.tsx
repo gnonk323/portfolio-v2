@@ -32,14 +32,16 @@ export default function FeatureSection({
       {!selectedFeature ? (
         <motion.div
           key="features"
-          className="max-w-7xl w-full space-y-12"
+          className="max-w-7xl w-full md:space-y-12 space-y-6"
           initial={{ x: -200, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: -200, opacity: 0 }}
           transition={{ duration: 0.4, ease: "easeInOut" }}
         >
           <SubHeading>{heading}</SubHeading>
-          <div className={`grid grid-cols-${columns} gap-8`}>
+          <div
+            className={`grid lg:grid-cols-${columns} grid-cols-1 md:gap-8 gap-4`}
+          >
             {features.map((feature) => (
               <FeatureCard
                 key={feature.title}
@@ -86,8 +88,8 @@ function FeatureSelected({
         All Features
       </button>
       <div>
-        <h2 className="font-doto font-bold text-2xl text-stone-500">Feature</h2>
-        <h3 className="text-3xl font-bold">{feature.title}</h3>
+        <SubHeading>Feature</SubHeading>
+        <h3 className="md:text-3xl text-xl font-bold">{feature.title}</h3>
       </div>
       {feature.content}
     </div>

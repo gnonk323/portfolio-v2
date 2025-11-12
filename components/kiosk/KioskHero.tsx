@@ -1,19 +1,17 @@
-import Image from "next/image";
-import { SubHeading } from "../Typography";
+import { Paragraph, SubHeading } from "../Typography";
 
 export default function Hero() {
   return (
-    <div className="flex grow justify-between items-center">
-      <Image
+    <div className="flex grow lg:justify-between lg:items-center flex-col lg:flex-row">
+      <img
         src={"/images/kiosk/bwhMOCK.png"}
         alt="Kiosk Dashboard"
-        width={1000}
-        height={1000}
+        className="max-w-5xl"
         loading="eager"
       />
-      <div className="space-y-8 px-32">
+      <div className="lg:space-y-8 space-y-6 lg:px-32 lg:pt-0 pt-8">
         <SubHeading>Overview</SubHeading>
-        <p className="leading-relaxed">
+        <Paragraph>
           This project was developed during the Software Engineering course
           (CS3733) at WPI taught by Professor Wilson Wong, in collaboration with
           Brigham and Women&apos;s Hospital in Boston, MA. Software Engineering
@@ -26,7 +24,7 @@ export default function Hero() {
           experience as possible. At the end of the term, our final
           presentations were watched by representatives from BWH, to take ideas
           in UI/UX design, functionality, and features.
-        </p>
+        </Paragraph>
       </div>
     </div>
   );

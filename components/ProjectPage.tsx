@@ -54,17 +54,17 @@ export default function ProjectPage({
 
       <div
         ref={containerRef}
-        className="h-screen overflow-y-scroll snap-y snap-mandatory"
+        className="h-screen overflow-y-scroll lg:snap-y lg:snap-mandatory"
       >
         <section
           ref={heroRef}
-          className="min-h-screen snap-start bg-background font-sans relative z-10 p-8 pt-20"
+          className="min-h-screen snap-start bg-background font-sans relative z-10 md:p-8 p-4 md:pt-20 pt-16"
         >
           <div className="space-y-6">
             <SubHeading className="m-0">PROJECT</SubHeading>
-            <div className="flex items-center justify-between">
+            <div className="flex md:items-center md:justify-between flex-col md:flex-row">
               <MainHeading>{title}</MainHeading>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 md:text-base text-sm md:m-0 mt-2">
                 {links.map((link, i) => (
                   <a
                     key={`project-link-${i}`}
@@ -73,7 +73,7 @@ export default function ProjectPage({
                     target="_blank"
                   >
                     {link.name}
-                    <ArrowUpRight className="w-4 h-4" />
+                    <ArrowUpRight size={16} />
                   </a>
                 ))}
               </div>
@@ -94,7 +94,7 @@ export default function ProjectPage({
         {React.Children.map(children, (child, i) => (
           <section
             key={`section-${i}`}
-            className="min-h-screen snap-start flex items-center justify-center bg-background font-sans relative z-10 p-8"
+            className="lg:min-h-screen snap-start flex items-center justify-center bg-background font-sans relative z-10 md:p-8 p-4"
           >
             {child}
           </section>

@@ -32,7 +32,7 @@ export default function NavBar({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="flex gap-4"
+              className="lg:flex gap-4 hidden"
             >
               <div className="text-stone-400">|</div>
               <div className="font-semibold opacity-90">{projectTitle}</div>

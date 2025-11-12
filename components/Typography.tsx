@@ -23,7 +23,10 @@ export function SubHeading({
 }) {
   return (
     <h2
-      className={cn("font-doto font-bold text-stone-500 text-3xl", className)}
+      className={cn(
+        "font-doto font-bold text-stone-500 md:text-3xl text-lg",
+        className,
+      )}
     >
       {children}
     </h2>
@@ -38,7 +41,12 @@ export function Paragraph({
   className?: string;
 }) {
   return (
-    <p className={cn("font-sans sm:text-xs text-base", className)}>
+    <p
+      className={cn(
+        "font-sans md:text-base text-sm leading-relaxed",
+        className,
+      )}
+    >
       {children}
     </p>
   );
