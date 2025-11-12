@@ -103,7 +103,7 @@ export function AdventureImage({
   return (
     <motion.div
       ref={containerRef}
-      className="relative overflow-hidden rounded-lg"
+      className="relative overflow-hidden rounded"
       whileHover={
         canHover
           ? {
