@@ -8,6 +8,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { NextProjectButton } from "@/components/Button";
 import { Paragraph, SubHeading } from "@/components/Typography";
+import Separator from "@/components/Separator";
 
 export default function DCTPage() {
   const techStack: { name: string; icon?: si.SimpleIcon }[] = [
@@ -102,6 +103,7 @@ export default function DCTPage() {
       </div>
 
       <div className="max-w-7xl w-full">
+        <Separator className="lg:hidden block mb-8" />
         <div className="lg:space-y-8 space-y-6 lg:mb-16 mb-8">
           <SubHeading>The Problem</SubHeading>
           <Paragraph>
@@ -134,11 +136,13 @@ export default function DCTPage() {
             </Paragraph>
           </div>
         </div>
+        <Separator className="lg:hidden block mt-8" />
       </div>
 
       <DCTFeatureSection />
 
       <div className="max-w-7xl w-full lg:space-y-8 space-y-6">
+        <Separator className="lg:hidden block" />
         <SubHeading>
           <AnimatePresence mode="wait">
             <motion.span
@@ -195,6 +199,7 @@ export default function DCTPage() {
       </div>
 
       <div className="max-w-7xl w-full lg:space-y-12 space-y-8 lg:m-0 mb-6">
+        <Separator className="lg:hidden block" />
         <div className="lg:space-y-8 space-y-6">
           <SubHeading>Closing Notes</SubHeading>
           <Paragraph>
@@ -208,6 +213,7 @@ export default function DCTPage() {
             when the team can&apos;t meet in person.
           </Paragraph>
         </div>
+        <Separator className="lg:hidden block" />
 
         <NextProjectButton name="Consensus" href={"/consensus"} />
       </div>

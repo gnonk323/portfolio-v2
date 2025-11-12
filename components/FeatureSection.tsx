@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { ArrowLeft } from "lucide-react";
 import { FeatureCard } from "./Cards";
 import { SubHeading } from "./Typography";
+import { Button } from "./Button";
 
 export interface FeatureItem {
   title: string;
@@ -80,13 +81,10 @@ function FeatureSelected({
 }) {
   return (
     <div className="space-y-6">
-      <button
-        onClick={back}
-        className="flex gap-2 items-center px-3 py-1 rounded-full hover:bg-stone-300 cursor-pointer border border-stone-500 transition-colors"
-      >
+      <Button onClick={back}>
         <ArrowLeft size={16} />
         All Features
-      </button>
+      </Button>
       <div>
         <SubHeading>Feature</SubHeading>
         <h3 className="md:text-3xl text-xl font-bold">{feature.title}</h3>

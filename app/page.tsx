@@ -104,7 +104,7 @@ export default function Home() {
               </button>
             </a>
           </div>
-          <div className="grid lg:grid-cols-4 grid-cols-2 lg:gap-6 gap-4 my-12">
+          <div className="grid lg:grid-cols-4 grid-cols-2 lg:gap-6 gap-4 lg:my-12 my-8">
             {/*<ProjectCard
               title="Dual-Portal Automotive Repair Management System"
               description="App for an auto repair shop in Denver, CO, designed to streamline their repair process and improve transparency with the customer."
@@ -152,8 +152,8 @@ export default function Home() {
               onClick={handleImageClick}
               src={
                 stache
-                  ? "/images/gustave-montana-stache.jpg"
-                  : "/images/gustave-montana.jpg"
+                  ? "/images/me/gustave-montana-stache.jpg"
+                  : "/images/me/gustave-montana.jpg"
               }
               alt="Me"
               className="md:mr-8 rounded mb-8 md:mb-0"

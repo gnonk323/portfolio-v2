@@ -33,7 +33,7 @@ export function NextProjectButton({
 }) {
   return (
     <Link href={href}>
-      <div className="rounded border border-stone-300 p-6 mt-16 flex items-center justify-between hover:-rotate-1 transition-all cursor-pointer hover:bg-stone-200 md:text-base text-sm">
+      <div className="rounded border border-stone-300 p-6 lg:mt-16 flex items-center justify-between hover:-rotate-1 transition-all cursor-pointer hover:bg-stone-200 md:text-base text-sm">
         <div>
           <p className="font-semibold text-lg">Next Project</p>
           <p>{name}</p>

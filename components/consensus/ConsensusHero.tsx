@@ -1,21 +1,18 @@
-import Image from "next/image";
+import { Paragraph, SubHeading } from "../Typography";
 
 export default function Hero() {
   return (
-    <div className="flex grow justify-between items-center">
-      <Image
+    <div className="flex grow lg:justify-between lg:items-center flex-col lg:flex-row lg:m-0 mb-6">
+      <img
         src={"/images/consensus/consensusMOCK.png"}
         alt="Consensus landing"
-        width={1000}
-        height={1000}
+        className="max-w-5xl"
         loading="eager"
       />
-      <div className="space-y-8 px-32">
-        <h3 className="font-doto font-bold text-stone-500 text-3xl">
-          Overview
-        </h3>
-        <div className="space-y-6 leading-relaxed">
-          <p>
+      <div className="lg:space-y-8 space-y-6 lg:px-32 lg:pt-0 pt-8">
+        <SubHeading>Overview</SubHeading>
+        <div className="space-y-6">
+          <Paragraph>
             Consensus is a game where every day there are 4 words that fit into
             a common category. You get four chances to guess what the consensus
             was, calculated from the opinions of everyone that submitted their
@@ -25,19 +22,19 @@ export default function Hero() {
             or wrong places. Once you finish the game, you get to submit your
             ranking for tomorrow&apos;s category and your opinion will go
             towards determining that consensus.
-          </p>
-          <p>
+          </Paragraph>
+          <Paragraph>
             In the archive, you can view the stats (both global and personal)
             for days you&apos;ve played, and play (try to guess the consensus)
             days you haven&apos;t.
-          </p>
+          </Paragraph>
         </div>
-        <p className="p-4 rounded border-2 border-amber-400 bg-amber-300/15">
+        <Paragraph className="p-4 rounded border-2 border-amber-400 bg-amber-300/15">
           This was a pet project with a few of my friends! We&apos;ve had a
           great time building it, but the deployment is a little bit broken at
           the moment 😢. If it sounds cool, please reach out to me and I can
           give you a demo!
-        </p>
+        </Paragraph>
       </div>
     </div>
   );
