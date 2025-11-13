@@ -6,7 +6,7 @@ export default function Hero() {
       <img
         src={"/images/consensus/consensusMOCK.png"}
         alt="Consensus landing"
-        className="max-w-5xl"
+        className="max-h-[70vh] w-auto"
         loading="eager"
       />
       <div className="lg:space-y-8 space-y-6 lg:px-32 lg:pt-0 pt-8">
