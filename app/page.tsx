@@ -40,9 +40,9 @@ export default function Home() {
         <div>
           <h1 className="font-bold font-doto text-xl">Gustave Montana</h1>
         </div>
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-2">
           <button
-            className="cursor-pointer hover:underline"
+            className="cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-200/15 transition-all"
             onClick={() =>
               document
                 .getElementById("about")
@@ -52,7 +52,7 @@ export default function Home() {
             About
           </button>
           <button
-            className="cursor-pointer hover:underline"
+            className="cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-200/15 transition-all"
             onClick={() =>
               document
                 .getElementById("projects")
@@ -61,11 +61,14 @@ export default function Home() {
           >
             Projects
           </button>
-          <Link className="cursor-pointer hover:underline" href={"/adventures"}>
+          <Link
+            className="cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-200/15 transition-all"
+            href={"/adventures"}
+          >
             Adventures
           </Link>
           <Link
-            className="flex gap-1 items-center cursor-pointer hover:underline"
+            className="flex gap-1 items-center cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-200/15 transition-all"
             href={"/gustave-montana-resume.pdf"}
             target={"_blank"}
           >
@@ -73,7 +76,7 @@ export default function Home() {
             <ArrowUpRight className="w-4 h-4" />
           </Link>
           <button
-            className="cursor-pointer hover:underline"
+            className="cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-200/15 transition-all"
             onClick={() =>
               document
                 .getElementById("contact")
@@ -88,7 +91,13 @@ export default function Home() {
         <div className="h-screen flex flex-col items-center justify-center gap-4 text-center text-xl text-background">
           <div className="md:text-7xl text-3xl">
             <div className="font-light">HI, MY NAME IS</div>
-            <div className="font-bold">GUSTAVE MONTANA</div>
+            <div className="font-bold group">
+              GUS
+              <span className="group-hover:opacity-15 transition-opacity">
+                TAVE
+              </span>{" "}
+              MONTANA
+            </div>
           </div>
           <div className="font-doto">• • •</div>
           <div className="font-light">Full Stack Software Engineer</div>

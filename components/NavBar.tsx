@@ -41,27 +41,33 @@ export default function NavBar({
         </div>
 
         {/* Desktop navigation */}
-        <div className="items-center gap-6 hidden sm:flex">
-          <Link className="cursor-pointer hover:underline" href={"/"}>
+        <div className="items-center gap-2 hidden sm:flex">
+          <Link
+            className="cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-300 transition-colors"
+            href={"/"}
+          >
             Home
           </Link>
-          <Link className="cursor-pointer hover:underline" href={"/adventures"}>
+          <Link
+            className="cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-300 transition-colors"
+            href={"/adventures"}
+          >
             Adventures
           </Link>
           <Link
-            className="flex gap-1 items-center cursor-pointer hover:underline"
+            className="flex gap-1 items-center cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-300 transition-colors"
             href={"/gustave-montana-resume.pdf"}
             target={"_blank"}
           >
             Resume
             <ArrowUpRight className="w-4 h-4" />
           </Link>
-          <Button
-            className="py-1 px-3 rounded-full border border-foreground cursor-pointer hover:bg-foreground hover:text-background transition-colors"
+          <button
+            className="py-0.5 px-3 rounded-full border border-foreground cursor-pointer hover:bg-foreground hover:text-background transition-colors"
             onClick={() => setShowContactDialog(true)}
           >
             Contact
-          </Button>
+          </button>
         </div>
 
         {/* Mobile menu toggle */}
