@@ -163,3 +163,44 @@ export function DemoImage({ src, alt }: { src: string; alt?: string }) {
     </div>
   );
 }
+
+interface HoverImageProps {
+  src: string;
+  message: string;
+  className?: string;
+}
+
+export function HoverImage({ src, message, className }: HoverImageProps) {
+  const [visible, setVisible] = useState(false);
+  const [pos, setPos] = useState({ x: 0, y: 0 });
+
+  const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    setPos({ x: e.clientX + 12, y: e.clientY + 12 });
+  };
+
+  return (
+    <div
+      onMouseMove={handleMove}
+      onMouseEnter={() => setVisible(true)}
+      onMouseLeave={() => setVisible(false)}
+      className="relative"
+    >
+      <img src={src} alt={message} className={className} />
+
+      <AnimatePresence>
+        {visible && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.92 }}
+            transition={{ duration: 0.15, ease: "easeOut" }}
+            className="pointer-events-none fixed z-50 rounded-md bg-stone-800/75 px-3 py-1.5 text-background text-sm whitespace-nowrap"
+            style={{ top: pos.y, left: pos.x }}
+          >
+            {message}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}

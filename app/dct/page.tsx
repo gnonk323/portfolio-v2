@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { NextProjectButton } from "@/components/Button";
 import { Paragraph, SubHeading } from "@/components/Typography";
 import Separator from "@/components/Separator";
+import { HoverImage } from "@/components/Visuals";
 
 export default function DCTPage() {
   const techStack: { name: string; icon?: si.SimpleIcon }[] = [
@@ -52,9 +53,9 @@ export default function DCTPage() {
       heroComponent={<Hero />}
     >
       <div className="max-w-7xl w-full lg:space-y-12 space-y-6">
-        <img
+        <HoverImage
           src={"/images/dct/monteverde.jpeg"}
-          alt="Monteverde, Costa Rica"
+          message="Monteverde, Costa Rica"
           className="rounded w-full h-96 object-cover mb-8"
         />
         <SubHeading>What is the IQP?</SubHeading>
@@ -111,8 +112,15 @@ export default function DCTPage() {
             collect qualitative and quantitative data, conduct interviews, and
             distribute surveys to complete their reports. However, each project
             varies greatly, in terms of geographical location, subject matter,
-            objective, and of course, research methods. During my IQP in
-            Monteverde, Costa Rica, my group used an array of softwares and
+            objective, and of course, research methods. During{" "}
+            <a
+              href="https://digital.wpi.edu/concern/student_works/08612t21c?locale=en"
+              target="_blank"
+              className="text-sky-600 hover:underline"
+            >
+              my IQP
+            </a>{" "}
+            in Monteverde, Costa Rica, my group used an array of softwares and
             websites to conduct our research. This proved complicated and
             frustrating at times.
           </Paragraph>
@@ -143,22 +151,24 @@ export default function DCTPage() {
 
       <div className="max-w-7xl w-full lg:space-y-8 space-y-6">
         <Separator className="lg:hidden block" />
-        <SubHeading>
-          <AnimatePresence mode="wait">
-            <motion.span
-              key={selectedImageIndex ?? "default"}
-              initial={{ opacity: 0, y: 4 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -4 }}
-              transition={{ duration: 0.25 }}
-              className="inline-block"
-            >
-              {selectedImageIndex === null
-                ? "More Screenshots"
-                : imageGrid[selectedImageIndex].title}
-            </motion.span>
-          </AnimatePresence>
-        </SubHeading>
+        <div>
+          <SubHeading>
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={selectedImageIndex ?? "default"}
+                initial={{ opacity: 0, y: 4 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -4 }}
+                transition={{ duration: 0.25 }}
+                className="inline-block"
+              >
+                {selectedImageIndex === null
+                  ? "More Screenshots"
+                  : imageGrid[selectedImageIndex].title}
+              </motion.span>
+            </AnimatePresence>
+          </SubHeading>
+        </div>
 
         <AnimatePresence mode="wait">
           {selectedImageIndex !== null ? (

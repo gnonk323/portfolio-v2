@@ -24,7 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${onest.variable} ${doto.variable} antialiased`}>
+      <body
+        className={`${onest.variable} ${doto.variable} antialiased selection:bg-rose-600 selection:text-white`}
+      >
         {children}
       </body>
     </html>

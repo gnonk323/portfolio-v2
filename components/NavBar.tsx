@@ -1,11 +1,13 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
 import { useState } from "react";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "./Button";
 import ContactDialog from "./ContactDialog";
+import { usePathname } from "next/navigation";
+import { cn } from "@sglara/cn";
 
 export default function NavBar({
   projectTitle,
@@ -14,8 +16,12 @@ export default function NavBar({
   projectTitle?: string;
   showProjectTitle?: boolean;
 }) {
+  const pathname = usePathname();
+
   const [showContactDialog, setShowContactDialog] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+
+  const [projectMenuOpen, setProjectMenuOpen] = useState(false);
 
   return (
     <>
@@ -48,6 +54,62 @@ export default function NavBar({
           >
             Home
           </Link>
+          <div
+            className="relative group"
+            onMouseEnter={() => setProjectMenuOpen(true)}
+            onMouseLeave={() => setProjectMenuOpen(false)}
+          >
+            <div className="flex gap-2 items-center cursor-pointer px-3 py-0.5 rounded-full group-hover:bg-stone-300 transition-colors">
+              Projects
+              <ChevronDown size={16} />
+            </div>
+
+            <AnimatePresence>
+              {projectMenuOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.15, ease: "easeOut" }}
+                  className="absolute left-0 mt-2 w-40 rounded bg-background shadow-md border border-stone-300 p-1.5 space-y-1 text-sm"
+                >
+                  <Link
+                    className={cn(
+                      "px-2 py-1 hover:bg-stone-300 cursor-pointer rounded block",
+                      pathname === "/kiosk" && "font-bold bg-stone-300",
+                    )}
+                    href={"/kiosk"}
+                  >
+                    BWH App
+                  </Link>
+                  <Link
+                    className={cn(
+                      "px-2 py-1 hover:bg-stone-300 cursor-pointer rounded block",
+                      pathname === "/dct" && "font-bold bg-stone-300",
+                    )}
+                    href={"/dct"}
+                  >
+                    Data Collection Tool
+                  </Link>
+                  <Link
+                    className={cn(
+                      "px-2 py-1 hover:bg-stone-300 cursor-pointer rounded block",
+                      pathname === "/consensus" && "font-bold bg-stone-300",
+                    )}
+                    href={"/consensus"}
+                  >
+                    Consensus
+                  </Link>
+                  <Link
+                    className="px-2 py-1 hover:bg-stone-300 cursor-pointer rounded block"
+                    href={""}
+                  >
+                    Random Monkeys
+                  </Link>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
           <Link
             className="cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-300 transition-colors"
             href={"/adventures"}
@@ -60,7 +122,7 @@ export default function NavBar({
             target={"_blank"}
           >
             Resume
-            <ArrowUpRight className="w-4 h-4" />
+            <ArrowUpRight size={16} />
           </Link>
           <button
             className="py-0.5 px-3 rounded-full border border-foreground cursor-pointer hover:bg-foreground hover:text-background transition-colors"

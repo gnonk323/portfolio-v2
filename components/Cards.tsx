@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { Paragraph } from "./Typography";
 
@@ -22,7 +22,10 @@ export function ProjectCard({
       target={newTab ? "_blank" : "_self"}
     >
       <div>
-        <h3 className="font-bold  mb-1">{title}</h3>
+        <div className="flex items-center justify-between">
+          <h3 className="font-bold  mb-1">{title}</h3>
+          {newTab && <ArrowUpRight size={16} />}
+        </div>
         <Paragraph>{description}</Paragraph>
       </div>
       <div className="mt-4 flex justify-between items-center text-sm">
