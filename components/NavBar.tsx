@@ -102,7 +102,8 @@ export default function NavBar({
                   </Link>
                   <Link
                     className="px-2 py-1 hover:bg-stone-300 cursor-pointer rounded block"
-                    href={""}
+                    href={"https://random-monkeys.vercel.app/"}
+                    target="_blank"
                   >
                     Random Monkeys
                   </Link>
