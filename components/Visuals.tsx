@@ -190,9 +190,9 @@ export function HoverImage({ src, message, className }: HoverImageProps) {
       <AnimatePresence>
         {visible && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.92 }}
+            initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.92 }}
+            exit={{ opacity: 0, scale: 0 }}
             transition={{ duration: 0.15, ease: "easeOut" }}
             className="pointer-events-none fixed z-50 rounded-md bg-stone-800/75 px-3 py-1.5 text-background text-sm whitespace-nowrap"
             style={{ top: pos.y, left: pos.x }}

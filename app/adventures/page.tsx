@@ -1,4 +1,3 @@
-// AdventuresPage.js (If you want the ProjectPage's snap-scrolling behavior)
 import ParticlesBackground from "@/components/ParticlesBackground";
 import NavBar from "@/components/NavBar";
 import { AdventureImage, type ImageTile } from "@/components/Visuals";
