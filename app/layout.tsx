@@ -22,11 +22,34 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const adventureImages = [
+    "/images/adventures/jackson_lake_dam.webp",
+    "/images/adventures/white_gold.webp",
+    "/images/adventures/rumor.webp",
+    "/images/adventures/costa_rica_mountains.webp",
+    "/images/adventures/naval_academy.webp",
+    "/images/adventures/riverside_park.webp",
+    "/images/adventures/jalen_brunson.webp",
+    "/images/adventures/kirby_moran.webp",
+    "/images/adventures/saemad.webp",
+    "/images/adventures/cliffs_of_moher.webp",
+    "/images/adventures/marys_nipple.webp",
+    "/images/adventures/tetons.webp",
+    "/images/adventures/cerro_amigos.webp",
+    "/images/adventures/yankees.webp",
+    "/images/adventures/robin.webp",
+    "/images/adventures/ski_tracks.webp",
+    "/images/adventures/devils_head.webp",
+    "/images/adventures/la_fortuna.webp",
+  ];
   return (
     <html lang="en">
-      <body
-        className={`${onest.variable} ${doto.variable} antialiased selection:bg-rose-600 selection:text-white`}
-      >
+      <head>
+        {adventureImages.map((src, index) => (
+          <link key={index} rel="preload" as="image" href={src} />
+        ))}
+      </head>
+      <body className={`${onest.variable} ${doto.variable} antialiased selection:bg-rose-600 selection:text-white`}>
         {children}
       </body>
     </html>

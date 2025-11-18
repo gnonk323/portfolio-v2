@@ -15,7 +15,7 @@ export function Button({
     <button
       {...props}
       className={cn(
-        "rounded-full px-3 py-1 border border-foreground flex items-center gap-2 hover:bg-foreground hover:text-background transition-colors cursor-pointer md:text-base text-sm",
+        "rounded-full px-3 py-1 border border-foreground flex items-center gap-2 hover:bg-stone-300 transition-colors cursor-pointer md:text-base text-sm",
         className,
       )}
     >
@@ -24,13 +24,7 @@ export function Button({
   );
 }
 
-export function NextProjectButton({
-  name,
-  href,
-}: {
-  name: string;
-  href: string;
-}) {
+export function NextProjectButton({ name, href }: { name: string; href: string }) {
   return (
     <Link href={href}>
       <div className="rounded border border-stone-300 p-6 lg:mt-16 flex items-center justify-between hover:-rotate-1 transition-all cursor-pointer hover:bg-stone-200 md:text-base text-sm">

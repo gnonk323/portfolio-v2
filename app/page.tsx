@@ -43,28 +43,17 @@ export default function Home() {
         <div className="flex items-center gap-2">
           <button
             className="cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-200/15 transition-all"
-            onClick={() =>
-              document
-                .getElementById("about")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
+            onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
           >
             About
           </button>
           <button
             className="cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-200/15 transition-all"
-            onClick={() =>
-              document
-                .getElementById("projects")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
+            onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
           >
             Projects
           </button>
-          <Link
-            className="cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-200/15 transition-all"
-            href={"/adventures"}
-          >
+          <Link className="cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-200/15 transition-all" href={"/adventures"}>
             Adventures
           </Link>
           <Link
@@ -77,11 +66,7 @@ export default function Home() {
           </Link>
           <button
             className="cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-200/15 transition-all"
-            onClick={() =>
-              document
-                .getElementById("contact")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
+            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
           >
             Contact
           </button>
@@ -93,10 +78,7 @@ export default function Home() {
             <div className="font-light">HI, MY NAME IS</div>
             <div className="font-bold group">
               GUS
-              <span className="group-hover:opacity-15 transition-opacity">
-                TAVE
-              </span>{" "}
-              MONTANA
+              <span className="group-hover:opacity-15 transition-opacity">TAVE</span> MONTANA
             </div>
           </div>
           <div className="font-doto">• • •</div>
@@ -146,12 +128,12 @@ export default function Home() {
               newTab
             />
           </div>
-          <a href="https://github.com/gnonk323/portfolio-v2" target="_blank">
-            <button className="md:hidden flex items-center gap-2 cursor-pointer px-3 py-1 hover:bg-stone-300 transition-colors rounded-full border border-stone-300 text-sm">
+          <button className="md:hidden flex items-center gap-2 cursor-pointer px-3 py-1 hover:bg-stone-300 transition-colors rounded-full border border-stone-300 text-sm">
+            <a href="https://github.com/gnonk323/portfolio-v2" target="_blank" className="flex gap-2 items-center">
               This site is open source on GitHub!
               <ArrowUpRight size={16} />
-            </button>
-          </a>
+            </a>
+          </button>
         </div>
         <div className="h-16" />
         <div id="about" className="bg-background md:p-8 py-8 px-4">
@@ -159,11 +141,7 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row items-center justify-center lg:my-12 mt-6">
             <motion.img
               onClick={handleImageClick}
-              src={
-                stache
-                  ? "/images/me/gustave-montana-stache.jpg"
-                  : "/images/me/gustave-montana.jpg"
-              }
+              src={stache ? "/images/me/gustave-montana-stache.jpg" : "/images/me/gustave-montana.jpg"}
               alt="Me"
               className="md:mr-8 rounded mb-8 md:mb-0"
               whileTap={{ scale: 0.96 }}
@@ -177,39 +155,30 @@ export default function Home() {
                 >
                   Worcester Polytechnic Institute (WPI)
                 </a>{" "}
-                in May 2025 with a BS in Computer Science and a minor in Data
-                Science, and I&apos;m looking to start my career in software
-                engineering. Through my personal and academic experience,
-                I&apos;ve found a passion for UI/UX design. I find that
-                front-end design and development falls at the intersection of
-                art and technology, and I really enjoy the challenge of creating
-                something new, unique, and beautiful while keeping it functional
-                and user-friendly.
+                in May 2025 with a BS in Computer Science and a minor in Data Science, and I&apos;m looking to start my career
+                in software engineering. Through my personal and academic experience, I&apos;ve found a passion for UI/UX
+                design. I find that front-end design and development falls at the intersection of art and technology, and I
+                really enjoy the challenge of creating something new, unique, and beautiful while keeping it functional and
+                user-friendly.
               </Paragraph>
               <Paragraph>
-                I am proficient in front-end and back-end technologies, I
-                specialize in creating solutions using TypeScript, React,
-                Node.js, and related frameworks (Next.js). I have a strong
-                foundation in RESTful APIs and database management.
+                I am proficient in front-end and back-end technologies, I specialize in creating solutions using TypeScript,
+                React, Node.js, and related frameworks (Next.js). I have a strong foundation in RESTful APIs and database
+                management.
               </Paragraph>
               <Paragraph>
-                I also have experience with Python for machine learning and data
-                analysis. I have worked on projects involving data
-                preprocessing, feature engineering, and model training using
-                libraries such as Pandas, NumPy, Scikit-learn, and TensorFlow.
+                I also have experience with Python for machine learning and data analysis. I have worked on projects involving
+                data preprocessing, feature engineering, and model training using libraries such as Pandas, NumPy, Scikit-learn,
+                and TensorFlow.
               </Paragraph>
-              <Paragraph>
-                I love to ski, sail, fish, bike, play video games, write code,
-                and learn new things.
-              </Paragraph>
+              <Paragraph>I love to ski, sail, fish, bike, play video games, write code, and learn new things.</Paragraph>
               <div>
-                <Link href={"/adventures"}>
-                  <Button>Browse my adventures gallery</Button>
-                </Link>
+                <Button>
+                  <Link href={"/adventures"}>Browse my adventures gallery</Link>
+                </Button>
               </div>
               <Paragraph className="italic">
-                I live in Connecticut and am looking for opportunities in the
-                Boston or New York City areas.
+                I live in Connecticut and am looking for opportunities in the Boston or New York City areas.
               </Paragraph>
             </div>
           </div>

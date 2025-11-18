@@ -17,7 +17,7 @@ export function ProjectCard({
 }) {
   return (
     <Link
-      className="rounded p-4 border border-stone-300 text-left flex flex-col justify-between group ring-0 hover:ring-4 ring-stone-500/40 transition-all"
+      className="rounded p-4 border border-stone-300 text-left flex flex-col justify-between group ring-0 hover:ring-4 ring-stone-400/40 transition-all"
       href={href}
       target={newTab ? "_blank" : "_self"}
     >
@@ -26,7 +26,7 @@ export function ProjectCard({
           <h3 className="font-bold  mb-1">{title}</h3>
           {newTab && <ArrowUpRight size={16} />}
         </div>
-        <Paragraph>{description}</Paragraph>
+        <p className="md:text-base text-sm">{description}</p>
       </div>
       <div className="mt-4 flex justify-between items-center text-sm">
         <div className="text-stone-500">{date}</div>
@@ -39,15 +39,7 @@ export function ProjectCard({
   );
 }
 
-export function TechStackBadge({
-  name,
-  svgPath,
-  icon,
-}: {
-  name: string;
-  svgPath?: string;
-  icon?: React.ReactNode;
-}) {
+export function TechStackBadge({ name, svgPath, icon }: { name: string; svgPath?: string; icon?: React.ReactNode }) {
   return (
     <div className="rounded border border-stone-300 px-2 py-1 hover:border-stone-500 transition-colors flex items-center gap-2 font-semibold cursor-default md:text-base text-sm">
       {svgPath && (

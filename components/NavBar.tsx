@@ -9,13 +9,7 @@ import ContactDialog from "./ContactDialog";
 import { usePathname } from "next/navigation";
 import { cn } from "@sglara/cn";
 
-export default function NavBar({
-  projectTitle,
-  showProjectTitle,
-}: {
-  projectTitle?: string;
-  showProjectTitle?: boolean;
-}) {
+export default function NavBar({ projectTitle, showProjectTitle }: { projectTitle?: string; showProjectTitle?: boolean }) {
   const pathname = usePathname();
 
   const [showContactDialog, setShowContactDialog] = useState(false);
@@ -27,10 +21,7 @@ export default function NavBar({
     <>
       <div className="font-sans fixed top-0 w-screen py-4 sm:px-8 px-4 flex items-center justify-between z-20 bg-background/30 backdrop-blur-md">
         <div className="flex items-center gap-4">
-          <Link
-            className="font-bold font-doto md:text-xl sm:text-base"
-            href="/"
-          >
+          <Link className="font-bold font-doto md:text-xl sm:text-base" href="/">
             Gustave Montana
           </Link>
           {showProjectTitle && (
@@ -48,10 +39,7 @@ export default function NavBar({
 
         {/* Desktop navigation */}
         <div className="items-center gap-2 hidden sm:flex">
-          <Link
-            className="cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-300 transition-colors"
-            href={"/"}
-          >
+          <Link className="cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-300 transition-colors" href={"/"}>
             Home
           </Link>
           <div
@@ -111,10 +99,7 @@ export default function NavBar({
               )}
             </AnimatePresence>
           </div>
-          <Link
-            className="cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-300 transition-colors"
-            href={"/adventures"}
-          >
+          <Link className="cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-300 transition-colors" href={"/adventures"}>
             Adventures
           </Link>
           <Link
@@ -126,7 +111,7 @@ export default function NavBar({
             <ArrowUpRight size={16} />
           </Link>
           <button
-            className="py-0.5 px-3 rounded-full border border-foreground cursor-pointer hover:bg-foreground hover:text-background transition-colors"
+            className="py-0.5 px-3 rounded-full border border-foreground cursor-pointer hover:bg-stone-300 transition-colors"
             onClick={() => setShowContactDialog(true)}
           >
             Contact
@@ -135,11 +120,7 @@ export default function NavBar({
 
         {/* Mobile menu toggle */}
         {/*<div className="sm:hidden">*/}
-        <button
-          onClick={() => setShowMenu((prev) => !prev)}
-          aria-label="Toggle menu"
-          className="sm:hidden"
-        >
+        <button onClick={() => setShowMenu((prev) => !prev)} aria-label="Toggle menu" className="sm:hidden">
           {showMenu ? <X size={20} /> : <Menu size={20} />}
         </button>
         {/*</div>*/}
@@ -154,18 +135,10 @@ export default function NavBar({
           transition={{ duration: 0.2 }}
           className="sm:hidden fixed top-14 right-4 bg-background border border-stone-300 shadow-md rounded p-4 z-30 flex flex-col space-y-2 text-sm"
         >
-          <Link
-            href="/"
-            className="hover:underline"
-            onClick={() => setShowMenu(false)}
-          >
+          <Link href="/" className="hover:underline" onClick={() => setShowMenu(false)}>
             Home
           </Link>
-          <Link
-            href="/adventures"
-            className="hover:underline"
-            onClick={() => setShowMenu(false)}
-          >
+          <Link href="/adventures" className="hover:underline" onClick={() => setShowMenu(false)}>
             Adventures
           </Link>
           <Link
@@ -190,9 +163,7 @@ export default function NavBar({
       )}
 
       {/* Contact Dialog */}
-      {showContactDialog && (
-        <ContactDialog setShowContactDialogAction={setShowContactDialog} />
-      )}
+      {showContactDialog && <ContactDialog setShowContactDialogAction={setShowContactDialog} />}
     </>
   );
 }
