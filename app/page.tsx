@@ -95,13 +95,14 @@ export default function Home() {
               </button>
             </a>
           </div>
-          <div className="grid lg:grid-cols-4 grid-cols-2 lg:gap-6 gap-4 lg:my-12 my-8">
-            {/*<ProjectCard
+          <div className="grid lg:grid-cols-3 grid-cols-2 lg:gap-6 gap-4 my-8">
+            <ProjectCard
+              current
               title="Dual-Portal Automotive Repair Management System"
               description="App for an auto repair shop in Denver, CO, designed to streamline their repair process and improve transparency with the customer."
               date="2025"
-              href=""
-            />*/}
+              href="/monkeywrench"
+            />
             <ProjectCard
               title="Hospital Kiosk for BWH"
               description="Kiosk Web App for Brigham and Women's Hospital in Boston, MA. Capable of hospital pathfinding and so much more!"
@@ -127,6 +128,14 @@ export default function Home() {
               href="https://random-monkeys.vercel.app/"
               newTab
             />
+            <Paragraph className="p-8 text-stone-500 italic align-middle">
+              <span className="font-semibold">More to come!</span> If you&apos;re interested in working with me I&apos;d love to
+              hear from you at gmt015@gmail.com or on{" "}
+              <a href="https://www.linkedin.com/in/gustave-montana/" target="_blank" className="hover:underline text-sky-600">
+                LinkedIn
+              </a>
+              .
+            </Paragraph>
           </div>
           <button className="md:hidden flex items-center gap-2 cursor-pointer px-3 py-1 hover:bg-stone-300 transition-colors rounded-full border border-stone-300 text-sm">
             <a href="https://github.com/gnonk323/portfolio-v2" target="_blank" className="flex gap-2 items-center">

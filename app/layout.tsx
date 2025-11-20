@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Onest, Doto } from "next/font/google";
+import { Onest, Doto, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const onest = Onest({
@@ -9,6 +9,11 @@ const onest = Onest({
 
 const doto = Doto({
   variable: "--font-doto",
+  subsets: ["latin"],
+});
+
+const mono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
 });
 
@@ -49,7 +54,9 @@ export default function RootLayout({
           <link key={index} rel="preload" as="image" href={src} />
         ))}
       </head>
-      <body className={`${onest.variable} ${doto.variable} antialiased selection:bg-rose-600 selection:text-white`}>
+      <body
+        className={`${onest.variable} ${doto.variable} ${mono.variable} antialiased selection:bg-rose-600 selection:text-white`}
+      >
         {children}
       </body>
     </html>

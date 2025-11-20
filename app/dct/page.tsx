@@ -15,7 +15,7 @@ export default function DCTPage() {
   const techStack: { name: string; icon?: si.SimpleIcon }[] = [
     { name: "TypeScript", icon: si.siTypescript },
     { name: "Node.js", icon: si.siNodedotjs },
-    { name: "React.js", icon: si.siReact },
+    { name: "React", icon: si.siReact },
     { name: "Express", icon: si.siExpress },
     { name: "PostgreSQL", icon: si.siPostgresql },
     { name: "TypeORM", icon: si.siTypeorm },
@@ -36,9 +36,7 @@ export default function DCTPage() {
     { title: "Dashboard", src: "/images/dct/dashboard.png" },
     { title: "Help Modal", src: "/images/dct/help-modal.png" },
   ];
-  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
-    null,
-  );
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
   return (
     <ProjectPage
@@ -73,18 +71,13 @@ export default function DCTPage() {
               >
                 Interactive Qualifying Project (IQP)
               </a>{" "}
-              is one of the most distinctive elements of the WPI Plan and
-              WPI&apos;s signature project-based curriculum, giving every WPI
-              student the experience of working in interdisciplinary teams to
-              solve a problem or need that lies at the intersection of science
-              and society. Unlike an academic course, this nine-credit-hour
-              requirement involves students working in teams, with students not
-              in their major, to tackle an issue that relates science,
-              engineering, and technology to society.
+              is one of the most distinctive elements of the WPI Plan and WPI&apos;s signature project-based curriculum, giving
+              every WPI student the experience of working in interdisciplinary teams to solve a problem or need that lies at the
+              intersection of science and society. Unlike an academic course, this nine-credit-hour requirement involves
+              students working in teams, with students not in their major, to tackle an issue that relates science, engineering,
+              and technology to society.
             </Paragraph>
-            <Paragraph className="text-right italic mt-2">
-              - WPI Website
-            </Paragraph>
+            <Paragraph className="text-right italic mt-2">- WPI Website</Paragraph>
           </div>
         </div>
         <div className="flex items-center justify-around text-center lg:mx-32">
@@ -108,11 +101,9 @@ export default function DCTPage() {
         <div className="lg:space-y-8 space-y-6 lg:mb-16 mb-8">
           <SubHeading>The Problem</SubHeading>
           <Paragraph>
-            The IQP is a research project, and so it requires students to
-            collect qualitative and quantitative data, conduct interviews, and
-            distribute surveys to complete their reports. However, each project
-            varies greatly, in terms of geographical location, subject matter,
-            objective, and of course, research methods. During{" "}
+            The IQP is a research project, and so it requires students to collect qualitative and quantitative data, conduct
+            interviews, and distribute surveys to complete their reports. However, each project varies greatly, in terms of
+            geographical location, subject matter, objective, and of course, research methods. During{" "}
             <a
               href="https://digital.wpi.edu/concern/student_works/08612t21c?locale=en"
               target="_blank"
@@ -120,27 +111,22 @@ export default function DCTPage() {
             >
               my IQP
             </a>{" "}
-            in Monteverde, Costa Rica, my group used an array of softwares and
-            websites to conduct our research. This proved complicated and
-            frustrating at times.
+            in Monteverde, Costa Rica, my group used an array of softwares and websites to conduct our research. This proved
+            complicated and frustrating at times.
           </Paragraph>
         </div>
         <div className="lg:space-y-8 space-y-6">
           <SubHeading>UX Research</SubHeading>
           <div className="lg:space-y-6 space-y-4 leading-relaxed">
             <Paragraph>
-              Before jumping into writing code, we had to conduct some research
-              of our own. As a group, we reviewed 20 previous IQP reports to
-              quantify which research methods were most commonly used, so we
-              would be able to focus our app on the best areas. To minimize
-              error, we peer reviewed each other&apos;s work to ensure accuracy
-              of our findings.
+              Before jumping into writing code, we had to conduct some research of our own. As a group, we reviewed 20 previous
+              IQP reports to quantify which research methods were most commonly used, so we would be able to focus our app on
+              the best areas. To minimize error, we peer reviewed each other&apos;s work to ensure accuracy of our findings.
             </Paragraph>
             <Paragraph>
-              We also researched other existing data collection apps, to see
-              what features they had and didn&apos;t have. We found that
-              existing apps lacked features important to IQP students, while
-              having extraneous features geared towards other types of users.
+              We also researched other existing data collection apps, to see what features they had and didn&apos;t have. We
+              found that existing apps lacked features important to IQP students, while having extraneous features geared
+              towards other types of users.
             </Paragraph>
           </div>
         </div>
@@ -162,9 +148,7 @@ export default function DCTPage() {
                 transition={{ duration: 0.25 }}
                 className="inline-block"
               >
-                {selectedImageIndex === null
-                  ? "More Screenshots"
-                  : imageGrid[selectedImageIndex].title}
+                {selectedImageIndex === null ? "More Screenshots" : imageGrid[selectedImageIndex].title}
               </motion.span>
             </AnimatePresence>
           </SubHeading>
@@ -213,14 +197,11 @@ export default function DCTPage() {
         <div className="lg:space-y-8 space-y-6">
           <SubHeading>Closing Notes</SubHeading>
           <Paragraph>
-            This project was a great stepping stone for my full stack
-            development skills. I took on a large workload of varying tasks,
-            which gave me a deeper understanding across the stack. It was also a
-            great learning experience for development in a remote team, as the
-            main development window was the summer of 2024. Not only did I have
-            to balance time between this project and my internship, but the
-            importance of a robust continuous integration plan is emphasized
-            when the team can&apos;t meet in person.
+            This project was a great stepping stone for my full stack development skills. I took on a large workload of varying
+            tasks, which gave me a deeper understanding across the stack. It was also a great learning experience for
+            development in a remote team, as the main development window was the summer of 2024. Not only did I have to balance
+            time between this project and my internship, but the importance of a robust continuous integration plan is
+            emphasized when the team can&apos;t meet in person.
           </Paragraph>
         </div>
         <Separator className="lg:hidden block" />

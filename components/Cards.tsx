@@ -8,12 +8,14 @@ export function ProjectCard({
   date,
   href,
   newTab = false,
+  current = false,
 }: {
   title: string;
   description: string;
   date: string;
   href: string;
   newTab?: boolean;
+  current?: boolean;
 }) {
   return (
     <Link
@@ -29,7 +31,11 @@ export function ProjectCard({
         <p className="md:text-base text-sm">{description}</p>
       </div>
       <div className="mt-4 flex justify-between items-center text-sm">
-        <div className="text-stone-500">{date}</div>
+        {current ? (
+          <span className="font-mono font-bold text-xs px-1.5 py-0.5 rounded bg-foreground text-background">CURRENT</span>
+        ) : (
+          <div className="text-stone-500">{date}</div>
+        )}
         <div className="flex opacity-0 group-hover:opacity-100 rounded-full bg-foreground text-background py-1 px-3 items-center gap-1 cursor-pointer hover:-translate-y-1 transition-all hover:drop-shadow-lg">
           Read More
           <ArrowRight className="h-4 w-4" />
@@ -41,7 +47,7 @@ export function ProjectCard({
 
 export function TechStackBadge({ name, svgPath, icon }: { name: string; svgPath?: string; icon?: React.ReactNode }) {
   return (
-    <div className="rounded border border-stone-300 px-2 py-1 hover:border-stone-500 transition-colors flex items-center gap-2 font-semibold cursor-default md:text-base text-sm">
+    <div className="rounded font-mono border border-stone-300 px-2 py-1 hover:border-stone-500 transition-colors flex items-center gap-2 font-semibold cursor-default md:text-base text-sm">
       {svgPath && (
         <svg role="img" viewBox="0 0 24 24" width="16" height="16">
           <path d={svgPath} />

@@ -1,13 +1,4 @@
-import {
-  Lightbulb,
-  ChevronRight,
-  CircleQuestionMark,
-  PencilLine,
-  CodeXml,
-  MessageCircle,
-  Laptop,
-  Crown,
-} from "lucide-react";
+import { Lightbulb, ChevronRight, CircleQuestionMark, PencilLine, CodeXml, MessageCircle, Laptop, Crown } from "lucide-react";
 import * as si from "simple-icons";
 import KioskFeatureSection from "@/components/kiosk/KioskFeatureSection";
 import { NextProjectButton } from "@/components/Button";
@@ -20,7 +11,7 @@ import Hero from "@/components/kiosk/KioskHero";
 export default function KioskPage() {
   const techStack: { name: string; icon?: si.SimpleIcon }[] = [
     { name: "TypeScript", icon: si.siTypescript },
-    { name: "React.js", icon: si.siReact },
+    { name: "React", icon: si.siReact },
     { name: "Node.js", icon: si.siNodedotjs },
     { name: "Material UI", icon: si.siGoogle },
     { name: "Prisma", icon: si.siPrisma },
@@ -48,19 +39,14 @@ export default function KioskPage() {
         <Separator className="lg:hidden block" />
         <SubHeading>Approach</SubHeading>
         <Paragraph className="m-0">
-          Each team used the <span className="font-semibold">Agile</span>{" "}
-          software development approach, with{" "}
-          <span className="font-semibold">weekly sprints</span>. Upon receiving
-          the application requirements for the week, our team met to convert the
-          requirements into epics, which were then broken down into user
-          stories. We used planning poker to weight each story, breaking them
-          down into sub-tasks if necessary. The team met daily for a scrum
-          meeting, led by our scrum master. The team was loosely broken up into
-          front-end, back-end, and algorithms developers, where over time I
-          became one of the lead engineers for the front-end team. At the end of
-          each sprint, we held a retrospective meeting where we discussed what
-          went well, what went wrong, what we could have done better, and gave
-          shout-outs to team members that went the extra mile.
+          Each team used the <span className="font-semibold">Agile</span> software development approach, with{" "}
+          <span className="font-semibold">weekly sprints</span>. Upon receiving the application requirements for the week, our
+          team met to convert the requirements into epics, which were then broken down into user stories. We used planning poker
+          to weight each story, breaking them down into sub-tasks if necessary. The team met daily for a scrum meeting, led by
+          our scrum master. The team was loosely broken up into front-end, back-end, and algorithms developers, where over time
+          I became one of the lead engineers for the front-end team. At the end of each sprint, we held a retrospective meeting
+          where we discussed what went well, what went wrong, what we could have done better, and gave shout-outs to team
+          members that went the extra mile.
         </Paragraph>
         <div className="lg:flex items-center gap-4 text-lg justify-between hidden mt-12">
           <div className="p-4 rounded-full font-semibold border border-stone-300 w-[20%] shadow-inner flex items-center justify-center gap-3">
@@ -95,13 +81,10 @@ export default function KioskPage() {
           <div className="flex items-start gap-6">
             <Laptop size={20} className="text-stone-400 shrink-0" />
             <div>
-              <h4 className="md:text-xl text-lg font-bold mb-2">
-                Full Stack Development
-              </h4>
+              <h4 className="md:text-xl text-lg font-bold mb-2">Full Stack Development</h4>
               <Paragraph>
-                Although I focused on front-end, I spent time interacting with
-                the back-end and I got a lot of valuable experience with
-                creating full stack features.
+                Although I focused on front-end, I spent time interacting with the back-end and I got a lot of valuable
+                experience with creating full stack features.
               </Paragraph>
             </div>
           </div>
@@ -110,9 +93,8 @@ export default function KioskPage() {
             <div>
               <h4 className="md:text-xl text-lg font-bold mb-2">Leadership</h4>
               <Paragraph>
-                I didn&apos;t start out a lead developer, but by the end of the
-                term I had taken a leadership role. Team members came to me with
-                questions, and I was able to develop my leadership skills.
+                I didn&apos;t start out a lead developer, but by the end of the term I had taken a leadership role. Team members
+                came to me with questions, and I was able to develop my leadership skills.
               </Paragraph>
             </div>
           </div>
@@ -121,26 +103,20 @@ export default function KioskPage() {
             <div>
               <h4 className="md:text-xl text-lg font-bold mb-2">Agile/Scrum</h4>
               <Paragraph>
-                This was my first time using the Agile methodology for software
-                development, and the fast paced nature of 1-week sprints was
-                overwhelming at times, but effective.
+                This was my first time using the Agile methodology for software development, and the fast paced nature of 1-week
+                sprints was overwhelming at times, but effective.
               </Paragraph>
             </div>
           </div>
         </div>
         <div>
           <Paragraph>
-            All in all, this project was an incredible learning experience for
-            me! It was the first time I took on a large full stack application
-            like this, and working in a team this large on a software
-            development project was a first too. I got the chance to take on a
-            leadership role, and I learned a lot about the Agile software
-            development process. I also learned a lot about the importance of
-            communication in a team, and how to work with people who have
-            different skill sets and backgrounds than me. I&apos;ve known I have
-            a passion for front-end development for a while, and this was a
-            great opportunity to throw myself into a large UI undertaking.
-            Overall, I’m really proud of the work we did!
+            All in all, this project was an incredible learning experience for me! It was the first time I took on a large full
+            stack application like this, and working in a team this large on a software development project was a first too. I
+            got the chance to take on a leadership role, and I learned a lot about the Agile software development process. I
+            also learned a lot about the importance of communication in a team, and how to work with people who have different
+            skill sets and backgrounds than me. I&apos;ve known I have a passion for front-end development for a while, and this
+            was a great opportunity to throw myself into a large UI undertaking. Overall, I’m really proud of the work we did!
           </Paragraph>
         </div>
 
