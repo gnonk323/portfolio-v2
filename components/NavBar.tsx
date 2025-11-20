@@ -9,6 +9,62 @@ import ContactDialog from "./ContactDialog";
 import { usePathname } from "next/navigation";
 import { cn } from "@sglara/cn";
 
+function ProjectDropDownItem({
+  name,
+  href,
+  newTab = false,
+  isActive,
+}: {
+  name: string;
+  href: string;
+  newTab?: boolean;
+  isActive: boolean;
+}) {
+  return (
+    <Link
+      className={cn("px-2 py-1 hover:bg-stone-300 cursor-pointer rounded block", isActive && "font-bold bg-stone-300")}
+      href={href}
+      target={newTab ? "_blank" : "_self"}
+    >
+      {name}
+    </Link>
+  );
+}
+
+function ProjectDropDown({ open, pathname }: { open: boolean; pathname: string }) {
+  const links: { name: string; href: string; newTab?: boolean }[] = [
+    { name: "MonkeyWrench", href: "/monkeywrench" },
+    { name: "Kiosk", href: "/kiosk" },
+    { name: "Data Collection Tool", href: "/dct" },
+    { name: "Consensus", href: "/consensus" },
+    { name: "Random Monkeys", href: "https://random-monkeys.vercel.app/", newTab: true },
+  ];
+
+  return (
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
+          className="absolute left-0 mt-2 w-40 rounded bg-background shadow-md border border-stone-300 p-1.5 space-y-1 text-sm"
+        >
+          {links.map((link, index) => (
+            <ProjectDropDownItem
+              key={index}
+              name={link.name}
+              href={link.href}
+              newTab={link.newTab}
+              isActive={pathname === link.href}
+            />
+          ))}
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
 export default function NavBar({ projectTitle, showProjectTitle }: { projectTitle?: string; showProjectTitle?: boolean }) {
   const pathname = usePathname();
 
@@ -52,52 +108,7 @@ export default function NavBar({ projectTitle, showProjectTitle }: { projectTitl
               <ChevronDown size={16} />
             </div>
 
-            <AnimatePresence>
-              {projectMenuOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: -8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
-                  transition={{ duration: 0.15, ease: "easeOut" }}
-                  className="absolute left-0 mt-2 w-40 rounded bg-background shadow-md border border-stone-300 p-1.5 space-y-1 text-sm"
-                >
-                  <Link
-                    className={cn(
-                      "px-2 py-1 hover:bg-stone-300 cursor-pointer rounded block",
-                      pathname === "/kiosk" && "font-bold bg-stone-300",
-                    )}
-                    href={"/kiosk"}
-                  >
-                    BWH App
-                  </Link>
-                  <Link
-                    className={cn(
-                      "px-2 py-1 hover:bg-stone-300 cursor-pointer rounded block",
-                      pathname === "/dct" && "font-bold bg-stone-300",
-                    )}
-                    href={"/dct"}
-                  >
-                    Data Collection Tool
-                  </Link>
-                  <Link
-                    className={cn(
-                      "px-2 py-1 hover:bg-stone-300 cursor-pointer rounded block",
-                      pathname === "/consensus" && "font-bold bg-stone-300",
-                    )}
-                    href={"/consensus"}
-                  >
-                    Consensus
-                  </Link>
-                  <Link
-                    className="px-2 py-1 hover:bg-stone-300 cursor-pointer rounded block"
-                    href={"https://random-monkeys.vercel.app/"}
-                    target="_blank"
-                  >
-                    Random Monkeys
-                  </Link>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <ProjectDropDown open={projectMenuOpen} pathname={pathname} />
           </div>
           <Link className="cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-300 transition-colors" href={"/adventures"}>
             Adventures
