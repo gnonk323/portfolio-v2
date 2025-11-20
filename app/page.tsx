@@ -95,7 +95,7 @@ export default function Home() {
               </button>
             </a>
           </div>
-          <div className="grid lg:grid-cols-3 grid-cols-2 lg:gap-6 gap-4 my-8">
+          <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-6 gap-4 my-8">
             <ProjectCard
               current
               title="Dual-Portal Automotive Repair Management System"
@@ -128,7 +128,7 @@ export default function Home() {
               href="https://random-monkeys.vercel.app/"
               newTab
             />
-            <Paragraph className="p-8 text-stone-500 italic align-middle">
+            <Paragraph className="lg:p-8 p-6 text-stone-500 italic align-middle">
               <span className="font-semibold">More to come!</span> If you&apos;re interested in working with me I&apos;d love to
               hear from you at gmt015@gmail.com or on{" "}
               <a href="https://www.linkedin.com/in/gustave-montana/" target="_blank" className="hover:underline text-sky-600">

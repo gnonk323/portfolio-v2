@@ -34,7 +34,7 @@ function ProjectDropDownItem({
 function ProjectDropDown({ open, pathname }: { open: boolean; pathname: string }) {
   const links: { name: string; href: string; newTab?: boolean }[] = [
     { name: "MonkeyWrench", href: "/monkeywrench" },
-    { name: "Kiosk", href: "/kiosk" },
+    { name: "Hospital Kiosk", href: "/kiosk" },
     { name: "Data Collection Tool", href: "/dct" },
     { name: "Consensus", href: "/consensus" },
     { name: "Random Monkeys", href: "https://random-monkeys.vercel.app/", newTab: true },
