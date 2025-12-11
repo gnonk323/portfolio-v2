@@ -82,7 +82,10 @@ export default function Home() {
             </div>
           </div>
           <div className="font-doto">• • •</div>
-          <div className="font-light">Full Stack Software Engineer</div>
+          <div className="font-light">
+            Full Stack Software Engineer
+            {/* at <a href="https://theclubspot.com/" target="_blank" className="hover:bg-rose-600 underline decoration-dotted">Clubspot</a> */}
+          </div>
           <ArrowDown className="mt-16 animate-bounce" />
         </div>
         <div id="projects" className="bg-background md:p-8 py-8 px-4">
@@ -97,21 +100,20 @@ export default function Home() {
           </div>
           <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-6 gap-4 my-8">
             <ProjectCard
-              current
-              title="Dual-Portal Automotive Repair Management System"
-              description="App for an auto repair shop in Denver, CO, designed to streamline their repair process and improve transparency with the customer."
+              title="MonkeyWrench"
+              description="Dual-Portal Automotive Repair Management System for an auto repair shop in Denver, CO, designed to streamline their repair process and improve transparency with the customer."
               date="2025"
               href="/monkeywrench"
             />
             <ProjectCard
               title="Hospital Kiosk for BWH"
-              description="Kiosk Web App for Brigham and Women's Hospital in Boston, MA. Capable of hospital pathfinding and so much more!"
+              description="Prototype Kiosk Web App for Brigham and Women's Hospital in Boston, MA and presented to hospital stakeholders. Capable of pathfinding and so much more!"
               date="2024"
               href="/kiosk"
             />
             <ProjectCard
               title="IQP Data Collection Tool"
-              description="An app for collecting various types of data in a team, designed for WPI's own IQP study abroad program."
+              description="An app for collecting various types of data in a team, designed for WPI's own IQP study abroad program. Geotagging, AI transcription, file storage, and more."
               date="2024"
               href="/dct"
             />
@@ -125,17 +127,24 @@ export default function Home() {
               title="Random Monkeys"
               description="Shuffle monkey pictures (courtesy of Unsplash) and save your favorites to your monkey library."
               date="2025"
-              href="https://random-monkeys.vercel.app/"
+              href="https://monkeys.gusmontana.com"
               newTab
             />
-            <Paragraph className="lg:p-8 p-6 text-stone-500 italic align-middle">
+            <ProjectCard
+              title="Epic Pass Dashboard"
+              description="Up-to-date information on snow conditions and weather for each of the Vail-owned ski mountains in New England."
+              date="2025"
+              href="https://epicdash.gusmontana.com"
+              newTab
+            />
+            {/* <Paragraph className="lg:p-8 p-6 text-stone-500 italic align-middle">
               <span className="font-semibold">More to come!</span> If you&apos;re interested in working with me I&apos;d love to
               hear from you at gmt015@gmail.com or on{" "}
               <a href="https://www.linkedin.com/in/gustave-montana/" target="_blank" className="hover:underline text-sky-600">
                 LinkedIn
               </a>
               .
-            </Paragraph>
+            </Paragraph> */}
           </div>
           <button className="md:hidden flex items-center gap-2 cursor-pointer px-3 py-1 hover:bg-stone-300 transition-colors rounded-full border border-stone-300 text-sm">
             <a href="https://github.com/gnonk323/portfolio-v2" target="_blank" className="flex gap-2 items-center">
@@ -171,8 +180,8 @@ export default function Home() {
                 user-friendly.
               </Paragraph>
               <Paragraph>
-                I am proficient in front-end and back-end technologies, I specialize in creating solutions using TypeScript,
-                React, Node.js, and related frameworks (Next.js). I have a strong foundation in RESTful APIs and database
+                I am skilled in front-end and back-end technologies; I specialize in creating solutions using TypeScript,
+                Node.js, and related frameworks (React, Vue, Next). I have a strong foundation in RESTful APIs and database
                 management.
               </Paragraph>
               <Paragraph>
@@ -186,9 +195,6 @@ export default function Home() {
                   <Link href={"/adventures"}>Browse my adventures gallery</Link>
                 </Button>
               </div>
-              <Paragraph className="italic">
-                I live in Connecticut and am looking for opportunities in the Boston or New York City areas.
-              </Paragraph>
             </div>
           </div>
         </div>

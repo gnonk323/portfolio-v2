@@ -51,3 +51,22 @@ export function Paragraph({
     </p>
   );
 }
+
+export function Code({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <code
+      className={cn(
+        "font-mono md:text-sm text-xs bg-stone-300 rounded py-0.5 px-1",
+        className,
+      )}
+    >
+      {children}
+    </code>
+  )
+}
