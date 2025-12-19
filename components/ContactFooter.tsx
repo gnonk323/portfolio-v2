@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "./Button";
-import { FileUser, Mail } from "lucide-react";
+import { FileUser, Mail, Menu } from "lucide-react";
 import { useState } from "react";
 import ContactDialog from "./ContactDialog";
 
@@ -63,8 +63,11 @@ export default function ContactFooter() {
             </Button>
           </Link>
         </div>
-        <div className="md:hidden" onClick={() => setShowContactDialog(true)}>
-          <Button>Show</Button>
+        <div className="md:hidden">
+          <Button onClick={() => setShowContactDialog(true)}>
+            <Menu size={16} />
+            Show
+          </Button>
         </div>
       </div>
       {showContactDialog && (

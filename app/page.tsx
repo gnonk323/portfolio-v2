@@ -100,7 +100,7 @@ export default function Home() {
           <div className="font-doto">• • •</div>
           <div className="font-light">
             Full Stack Software Engineer
-            {/* at <a href="https://theclubspot.com/" target="_blank" className="hover:bg-rose-600 underline decoration-dotted">Clubspot</a> */}
+            at <a href="https://theclubspot.com/" target="_blank" className="hover:bg-rose-600 underline decoration-dotted">Clubspot</a>
           </div>
           <button
             className="cursor-pointer p-3 rounded-full hover:bg-stone-200/20 mt-16 animate-bounce transition-colors"
@@ -158,14 +158,6 @@ export default function Home() {
               href="https://epicdash.gusmontana.com"
               newTab
             />
-            {/* <Paragraph className="lg:p-8 p-6 text-stone-500 italic align-middle">
-              <span className="font-semibold">More to come!</span> If you&apos;re interested in working with me I&apos;d love to
-              hear from you at gmt015@gmail.com or on{" "}
-              <a href="https://www.linkedin.com/in/gustave-montana/" target="_blank" className="hover:underline text-rose-600">
-                LinkedIn
-              </a>
-              .
-            </Paragraph> */}
           </div>
           <a href="https://github.com/gnonk323/portfolio-v2" target="_blank">
             <Button className="md:hidden flex">
@@ -178,13 +170,22 @@ export default function Home() {
         <div id="about" className="bg-background md:p-8 py-8 px-4">
           <h2 className="font-doto font-bold text-3xl">ABOUT ME</h2>
           <div className="flex flex-col lg:flex-row items-center justify-center lg:my-12 mt-6">
-            <motion.img
-              onClick={handleImageClick}
-              src={stache ? "/images/me/gustave-montana-stache.jpg" : "/images/me/gustave-montana.jpg"}
-              alt="Me"
-              className="md:mr-8 rounded mb-8 md:mb-0"
-              whileTap={{ scale: 0.96 }}
-            />
+            <div className="relative flex items-center justify-center shrink-0 md:mr-12 mb-8 md:mb-0">
+              <motion.img
+                onClick={handleImageClick}
+                src={stache ? "/images/me/gustave-montana-stache.jpg" : "/images/me/gustave-montana.jpg"}
+                alt="Me"
+                className="relative rounded z-10 scale-85 shadow-xl hover:shadow-2xl transition-shadow"
+                whileTap={{ scale: 0.96 }}
+              />
+              <svg 
+                className="absolute inset-0 fill-current text-rose-600 w-full h-full z-0 scale-150"
+                viewBox="0 0 200 200" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M57.9,-15.3C67.6,11,62.8,45.5,44.4,58.3C25.9,71.1,-6.4,62.2,-31.9,43.7C-57.4,25.2,-76.1,-2.8,-69.6,-24.6C-63.2,-46.5,-31.6,-62.2,-3.7,-61C24.1,-59.8,48.2,-41.6,57.9,-15.3Z" transform="translate(100 100)" />
+              </svg>             
+            </div>
             <div className="max-w-3xl space-y-6">
               <Paragraph>
                 Welcome to my website, I hope you like it! I graduated from{" "}

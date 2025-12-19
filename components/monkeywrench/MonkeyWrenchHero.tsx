@@ -13,7 +13,7 @@ export default function Hero() {
           className="max-h-[60vh] w-auto"
           loading="eager"
         />
-        <div className="lg:space-y-8 space-y-6 lg:px-32 lg:pt-0 pt-8">
+        <div className="lg:space-y-8 space-y-6 lg:px-32 xl:pt-0 pt-8">
           <SubHeading>Overview</SubHeading>
           <div className="space-y-4">
             <Paragraph>
