@@ -99,8 +99,8 @@ export default function Home() {
           </div>
           <div className="font-doto">• • •</div>
           <p className="font-light md:text-lg text-sm">
-            Full Stack Software Engineer at
-            {" "}<a href="https://theclubspot.com/" target="_blank" className="hover:bg-rose-600 underline decoration-dotted">Clubspot</a>
+            Full Stack Software Engineer
+            {/* at{" "}<a href="https://theclubspot.com/" target="_blank" className="hover:bg-rose-600 underline decoration-dotted">Clubspot</a> */}
           </p>
           <button
             className="cursor-pointer p-3 rounded-full hover:bg-stone-200/20 mt-16 animate-bounce transition-colors"
