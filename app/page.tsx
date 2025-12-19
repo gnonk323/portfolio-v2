@@ -98,10 +98,10 @@ export default function Home() {
             </div>
           </div>
           <div className="font-doto">• • •</div>
-          <div className="font-light">
-            Full Stack Software Engineer
-            at <a href="https://theclubspot.com/" target="_blank" className="hover:bg-rose-600 underline decoration-dotted">Clubspot</a>
-          </div>
+          <p className="font-light md:text-lg text-sm">
+            Full Stack Software Engineer at
+            {" "}<a href="https://theclubspot.com/" target="_blank" className="hover:bg-rose-600 underline decoration-dotted">Clubspot</a>
+          </p>
           <button
             className="cursor-pointer p-3 rounded-full hover:bg-stone-200/20 mt-16 animate-bounce transition-colors"
             onClick={() => scrollToCenter("projects")}
@@ -175,7 +175,7 @@ export default function Home() {
                 onClick={handleImageClick}
                 src={stache ? "/images/me/gustave-montana-stache.jpg" : "/images/me/gustave-montana.jpg"}
                 alt="Me"
-                className="relative rounded z-10 scale-85 shadow-xl hover:shadow-2xl transition-shadow"
+                className="relative rounded-2xl z-10 scale-85 shadow-xl hover:shadow-2xl transition-shadow"
                 whileTap={{ scale: 0.96 }}
               />
               <svg 
