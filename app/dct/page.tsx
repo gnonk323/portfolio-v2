@@ -67,7 +67,7 @@ export default function DCTPage() {
               <a
                 href="https://www.wpi.edu/project-based-learning/project-based-education/interactive-qualifying-project"
                 target="_blank"
-                className="text-sky-600 hover:underline"
+                className="text-rose-600 hover:underline"
               >
                 Interactive Qualifying Project (IQP)
               </a>{" "}
@@ -107,7 +107,7 @@ export default function DCTPage() {
             <a
               href="https://digital.wpi.edu/concern/student_works/08612t21c?locale=en"
               target="_blank"
-              className="text-sky-600 hover:underline"
+              className="text-rose-600 hover:underline"
             >
               my IQP
             </a>{" "}

@@ -73,7 +73,7 @@ export default function ProjectPage({
                     target="_blank"
                   >
                     {link.name}
-                    <ArrowUpRight size={16} />
+                    <ArrowUpRight className="shrink-0" size={16} />
                   </a>
                 ))}
               </div>

@@ -16,17 +16,57 @@ export default function ParticlesBackground() {
   const options = useMemo(
     () => ({
       preset: "links",
+      detectRetina: true,
       background: {
-        color: { value: "#000" }, // or transparent if you prefer
+        color: { value: "#000" },
       },
       particles: {
-        color: { value: "#ffffff" },
+        number: {
+          value: 80, // desktop default
+        },
+        color: {
+          value: "#ffffff",
+        },
         links: {
           color: "#ffffff",
           distance: 150,
           enable: true,
         },
+        move: {
+          speed: 1.5,
+        },
       },
+      responsive: [
+        {
+          maxWidth: 1024, // tablets
+          options: {
+            particles: {
+              number: {
+                value: 50,
+              },
+              links: {
+                distance: 120,
+              },
+            },
+          },
+        },
+        {
+          maxWidth: 768, // phones
+          options: {
+            particles: {
+              number: {
+                value: 30,
+              },
+              links: {
+                distance: 100,
+              },
+              move: {
+                speed: 1,
+              },
+            },
+          },
+        },
+      ],
     }),
     [],
   );
@@ -34,17 +74,8 @@ export default function ParticlesBackground() {
   if (!ready) return null;
 
   return (
-    <Particles
-      id="tsparticles"
-      options={options}
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        zIndex: -1, // stays behind other elements
-      }}
-    />
+    <div className="fixed inset-0 -z-10">
+      <Particles id="tsparticles" options={options} className="h-full w-full" />
+    </div>
   );
 }

@@ -10,6 +10,22 @@ import Link from "next/link";
 import { Button } from "@/components/Button";
 import { Paragraph } from "@/components/Typography";
 
+const scrollToCenter = (id: string) => {
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  const elementTop = el.getBoundingClientRect().top + window.scrollY;
+  const elementHeight = el.offsetHeight;
+  const viewportHeight = window.innerHeight;
+
+  const offset = elementTop - viewportHeight / 2 + elementHeight / 2;
+
+  window.scrollTo({
+    top: offset,
+    behavior: "smooth",
+  });
+};
+
 export default function Home() {
   const [clickCount, setClickCount] = useState(0);
   const [stache, setStache] = useState(false);
@@ -42,22 +58,22 @@ export default function Home() {
         </div>
         <div className="flex items-center gap-2">
           <button
-            className="cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-200/15 transition-all"
-            onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
+            className="cursor-pointer px-3 py-0.5"
+            onClick={() => scrollToCenter("about")}
           >
             About
           </button>
           <button
-            className="cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-200/15 transition-all"
-            onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
+            className="cursor-pointer px-3 py-0.5"
+            onClick={() => scrollToCenter("projects")}
           >
             Projects
           </button>
-          <Link className="cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-200/15 transition-all" href={"/adventures"}>
+          <Link className="cursor-pointer px-3 py-0.5" href={"/adventures"}>
             Adventures
           </Link>
           <Link
-            className="flex gap-1 items-center cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-200/15 transition-all"
+            className="flex gap-1 items-center cursor-pointer px-3 py-0.5"
             href={"/gustave-montana-resume.pdf"}
             target={"_blank"}
           >
@@ -65,7 +81,7 @@ export default function Home() {
             <ArrowUpRight className="w-4 h-4" />
           </Link>
           <button
-            className="cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-200/15 transition-all"
+            className="cursor-pointer px-3 py-0.5"
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
           >
             Contact
@@ -86,16 +102,21 @@ export default function Home() {
             Full Stack Software Engineer
             {/* at <a href="https://theclubspot.com/" target="_blank" className="hover:bg-rose-600 underline decoration-dotted">Clubspot</a> */}
           </div>
-          <ArrowDown className="mt-16 animate-bounce" />
+          <button
+            className="cursor-pointer p-3 rounded-full hover:bg-stone-200/20 mt-16 animate-bounce transition-colors"
+            onClick={() => scrollToCenter("projects")}
+          >
+            <ArrowDown />
+          </button>
         </div>
         <div id="projects" className="bg-background md:p-8 py-8 px-4">
           <div className="flex items-center justify-between">
             <h2 className="font-doto font-bold text-3xl">PROJECTS</h2>
             <a href="https://github.com/gnonk323/portfolio-v2" target="_blank">
-              <button className="md:flex hidden items-center gap-2 cursor-pointer px-3 py-1 hover:bg-stone-300 transition-colors rounded-full border border-stone-300">
+              <Button className="md:flex hidden">
                 This site is open source on GitHub!
                 <ArrowUpRight size={16} />
-              </button>
+              </Button>
             </a>
           </div>
           <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-6 gap-4 my-8">
@@ -140,18 +161,18 @@ export default function Home() {
             {/* <Paragraph className="lg:p-8 p-6 text-stone-500 italic align-middle">
               <span className="font-semibold">More to come!</span> If you&apos;re interested in working with me I&apos;d love to
               hear from you at gmt015@gmail.com or on{" "}
-              <a href="https://www.linkedin.com/in/gustave-montana/" target="_blank" className="hover:underline text-sky-600">
+              <a href="https://www.linkedin.com/in/gustave-montana/" target="_blank" className="hover:underline text-rose-600">
                 LinkedIn
               </a>
               .
             </Paragraph> */}
           </div>
-          <button className="md:hidden flex items-center gap-2 cursor-pointer px-3 py-1 hover:bg-stone-300 transition-colors rounded-full border border-stone-300 text-sm">
-            <a href="https://github.com/gnonk323/portfolio-v2" target="_blank" className="flex gap-2 items-center">
+          <a href="https://github.com/gnonk323/portfolio-v2" target="_blank">
+            <Button className="md:hidden flex">
               This site is open source on GitHub!
               <ArrowUpRight size={16} />
-            </a>
-          </button>
+            </Button>
+          </a>
         </div>
         <div className="h-16" />
         <div id="about" className="bg-background md:p-8 py-8 px-4">
@@ -168,8 +189,9 @@ export default function Home() {
               <Paragraph>
                 Welcome to my website, I hope you like it! I graduated from{" "}
                 <a
-                  className="hover:underline text-sky-600 cursor-pointer"
+                  className="hover:underline text-rose-600 cursor-pointer"
                   href="https://www.wpi.edu/academics/departments/computer-science"
+                  target="_blank"
                 >
                   Worcester Polytechnic Institute (WPI)
                 </a>{" "}

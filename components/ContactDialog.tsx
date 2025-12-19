@@ -19,7 +19,7 @@ export default function ContactDialog({
       transition={{ duration: 0.2 }}
     >
       <motion.div
-        className="bg-background py-8 px-12 rounded shadow-lg space-y-6"
+        className="bg-background p-12 rounded shadow-lg space-y-6"
         onClick={(e) => e.stopPropagation()}
         initial={{ opacity: 0, scale: 0.75 }}
         animate={{ opacity: 1, scale: 1 }}

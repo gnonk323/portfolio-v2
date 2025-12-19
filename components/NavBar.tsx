@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { ArrowUpRight, Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "./Button";
 import ContactDialog from "./ContactDialog";
@@ -22,11 +22,15 @@ function ProjectDropDownItem({
 }) {
   return (
     <Link
-      className={cn("px-2 py-1 hover:bg-stone-300 cursor-pointer rounded block", isActive && "font-bold bg-stone-300")}
+      className={cn(
+        "px-2 py-1 hover:bg-stone-300 cursor-pointer rounded whitespace-nowrap flex items-center gap-1",
+        isActive && "font-bold bg-stone-300"
+      )}
       href={href}
       target={newTab ? "_blank" : "_self"}
     >
       {name}
+      {newTab && <ArrowUpRight size={12} className="shrink-0" />}
     </Link>
   );
 }
@@ -37,7 +41,8 @@ function ProjectDropDown({ open, pathname }: { open: boolean; pathname: string }
     { name: "Hospital Kiosk", href: "/kiosk" },
     { name: "Data Collection Tool", href: "/dct" },
     { name: "Consensus", href: "/consensus" },
-    { name: "Random Monkeys", href: "https://random-monkeys.vercel.app/", newTab: true },
+    { name: "Random Monkeys", href: "https://monkeys.gusmontana.com/", newTab: true },
+    { name: "Epic Pass Dashboard", href: "https://epicdash.gusmontana.com/", newTab: true },
   ];
 
   return (
@@ -48,7 +53,7 @@ function ProjectDropDown({ open, pathname }: { open: boolean; pathname: string }
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.15, ease: "easeOut" }}
-          className="absolute left-0 mt-2 w-40 rounded bg-background shadow-md border border-stone-300 p-1.5 space-y-1 text-sm"
+          className="absolute left-0 mt-2 w-max rounded bg-background shadow-md border border-stone-300 p-1.5 space-y-1 text-sm flex flex-col"
         >
           {links.map((link, index) => (
             <ProjectDropDownItem
@@ -65,21 +70,40 @@ function ProjectDropDown({ open, pathname }: { open: boolean; pathname: string }
   );
 }
 
-export default function NavBar({ projectTitle, showProjectTitle }: { projectTitle?: string; showProjectTitle?: boolean }) {
+export default function NavBar({
+  projectTitle,
+  showProjectTitle,
+}: {
+  projectTitle?: string;
+  showProjectTitle?: boolean;
+}) {
   const pathname = usePathname();
 
   const [showContactDialog, setShowContactDialog] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
-
   const [projectMenuOpen, setProjectMenuOpen] = useState(false);
+
+  const closeTimeout = useRef<NodeJS.Timeout | null>(null);
+
+  const openProjectMenu = () => {
+    if (closeTimeout.current) clearTimeout(closeTimeout.current);
+    setProjectMenuOpen(true);
+  };
+
+  const closeProjectMenu = () => {
+    closeTimeout.current = setTimeout(() => {
+      setProjectMenuOpen(false);
+    }, 120);
+  };
 
   return (
     <>
-      <div className="font-sans fixed top-0 w-screen py-4 sm:px-8 px-4 flex items-center justify-between z-20 bg-background/30 backdrop-blur-md">
+      <div className="font-sans fixed top-0 w-screen py-4 sm:px-8 px-4 flex items-center justify-between z-20 bg-background backdrop-blur-md border-b border-stone-300">
         <div className="flex items-center gap-4">
           <Link className="font-bold font-doto md:text-xl sm:text-base" href="/">
             Gustave Montana
           </Link>
+
           {showProjectTitle && (
             <motion.div
               initial={{ opacity: 0 }}
@@ -95,46 +119,53 @@ export default function NavBar({ projectTitle, showProjectTitle }: { projectTitl
 
         {/* Desktop navigation */}
         <div className="items-center gap-2 hidden sm:flex">
-          <Link className="cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-300 transition-colors" href={"/"}>
+          <Link className="cursor-pointer px-3 py-0.5" href="/">
             Home
           </Link>
+
+          {/* Projects dropdown */}
           <div
-            className="relative group"
-            onMouseEnter={() => setProjectMenuOpen(true)}
-            onMouseLeave={() => setProjectMenuOpen(false)}
+            className="relative"
+            onMouseEnter={openProjectMenu}
+            onMouseLeave={closeProjectMenu}
           >
-            <div className="flex gap-2 items-center cursor-pointer px-3 py-0.5 rounded-full group-hover:bg-stone-300 transition-colors">
+            <div className="flex gap-2 items-center cursor-pointer px-3 py-0.5">
               Projects
               <ChevronDown size={16} />
             </div>
 
             <ProjectDropDown open={projectMenuOpen} pathname={pathname} />
           </div>
-          <Link className="cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-300 transition-colors" href={"/adventures"}>
+
+          <Link
+            className="cursor-pointer px-3 py-0.5"
+            href="/adventures"
+          >
             Adventures
           </Link>
+
           <Link
-            className="flex gap-1 items-center cursor-pointer px-3 py-0.5 rounded-full hover:bg-stone-300 transition-colors"
-            href={"/gustave-montana-resume.pdf"}
-            target={"_blank"}
+            className="flex gap-1 items-center cursor-pointer px-3 py-0.5"
+            href="/gustave-montana-resume.pdf"
+            target="_blank"
           >
             Resume
             <ArrowUpRight size={16} />
           </Link>
-          <button
-            className="py-0.5 px-3 rounded-full border border-foreground cursor-pointer hover:bg-stone-300 transition-colors"
-            onClick={() => setShowContactDialog(true)}
-          >
+
+          <Button className="py-0.5 px-3 cursor-pointer" onClick={() => setShowContactDialog(true)}>
             Contact
-          </button>
+          </Button>
         </div>
 
         {/* Mobile menu toggle */}
-        {/*<div className="sm:hidden">*/}
-        <button onClick={() => setShowMenu((prev) => !prev)} aria-label="Toggle menu" className="sm:hidden">
+        <button
+          onClick={() => setShowMenu((prev) => !prev)}
+          aria-label="Toggle menu"
+          className="sm:hidden"
+        >
           {showMenu ? <X size={20} /> : <Menu size={20} />}
         </button>
-        {/*</div>*/}
       </div>
 
       {/* Mobile Popover Menu */}
@@ -149,20 +180,26 @@ export default function NavBar({ projectTitle, showProjectTitle }: { projectTitl
           <Link href="/" className="hover:underline" onClick={() => setShowMenu(false)}>
             Home
           </Link>
-          <Link href="/adventures" className="hover:underline" onClick={() => setShowMenu(false)}>
+          <Link
+            href="/adventures"
+            className="hover:underline"
+            onClick={() => setShowMenu(false)}
+          >
             Adventures
           </Link>
           <Link
             href="/gustave-montana-resume.pdf"
             target="_blank"
-            className="flex gap-1 items-center hover:underline"
+            className="flex gap-1 items-center hover:underline m-0"
             onClick={() => setShowMenu(false)}
           >
             Resume
-            <ArrowUpRight className="w-4 h-4" />
+            <ArrowUpRight size={12} className="shrink-0" />
           </Link>
+
+          <div className="h-px bg-stone-300 my-3" />
+
           <Button
-            className="py-1 px-3 rounded-full border border-foreground hover:bg-foreground hover:text-background transition-colors mt-2"
             onClick={() => {
               setShowContactDialog(true);
               setShowMenu(false);
@@ -174,7 +211,9 @@ export default function NavBar({ projectTitle, showProjectTitle }: { projectTitl
       )}
 
       {/* Contact Dialog */}
-      {showContactDialog && <ContactDialog setShowContactDialogAction={setShowContactDialog} />}
+      {showContactDialog && (
+        <ContactDialog setShowContactDialogAction={setShowContactDialog} />
+      )}
     </>
   );
 }

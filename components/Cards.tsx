@@ -36,7 +36,7 @@ export function ProjectCard({
         ) : (
           <div className="text-stone-500">{date}</div>
         )}
-        <div className="flex opacity-0 group-hover:opacity-100 rounded-full bg-foreground text-background py-1 px-3 items-center gap-1 cursor-pointer hover:-translate-y-1 transition-all hover:drop-shadow-lg">
+        <div className="flex opacity-0 group-hover:opacity-100 rounded-full bg-foreground text-background py-1 px-3 items-center gap-1 cursor-pointer transition-all hover:drop-shadow-md">
           Read More
           <ArrowRight className="h-4 w-4" />
         </div>
@@ -78,7 +78,7 @@ export function FeatureCard({
         <Paragraph>{description}</Paragraph>
       </div>
       <div className="flex justify-end mt-4 text-sm md:text-base">
-        <p className="flex items-center gap-1 text-sky-600 font-semibold">
+        <p className="flex items-center gap-1 text-rose-600 font-semibold">
           Read More
           <ArrowRight size={16} />
         </p>

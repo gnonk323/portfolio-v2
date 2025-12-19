@@ -79,7 +79,7 @@ export default function KioskPage() {
         <SubHeading>Key Takeaways</SubHeading>
         <div className="lg:space-y-6 space-y-4">
           <div className="flex items-start gap-6">
-            <Laptop size={20} className="text-stone-400 shrink-0" />
+            <Laptop size={20} className="text-stone-400 shrink-0 mt-1" />
             <div>
               <h4 className="md:text-xl text-lg font-bold mb-2">Full Stack Development</h4>
               <Paragraph>
@@ -89,7 +89,7 @@ export default function KioskPage() {
             </div>
           </div>
           <div className="flex items-start gap-6">
-            <Crown size={20} className="text-stone-400 shrink-0" />
+            <Crown size={20} className="text-stone-400 shrink-0 mt-1" />
             <div>
               <h4 className="md:text-xl text-lg font-bold mb-2">Leadership</h4>
               <Paragraph>
@@ -99,7 +99,7 @@ export default function KioskPage() {
             </div>
           </div>
           <div className="flex items-start gap-6">
-            <Lightbulb size={20} className="text-stone-400 shrink-0" />
+            <Lightbulb size={20} className="text-stone-400 shrink-0 mt-1" />
             <div>
               <h4 className="md:text-xl text-lg font-bold mb-2">Agile/Scrum</h4>
               <Paragraph>
