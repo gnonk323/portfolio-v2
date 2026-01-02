@@ -70,7 +70,7 @@ export function FeatureCard({
 }) {
   return (
     <div
-      className="flex flex-col justify-between p-6 border border-stone-300 rounded cursor-pointer hover:bg-stone-200 transition-all hover:ring-4 hover:ring-stone-300"
+      className="flex flex-col justify-between p-6 border border-stone-300 rounded cursor-pointer transition-all hover:ring-4 hover:ring-stone-300"
       onClick={onClickAction}
     >
       <div className="md:space-y-4 space-y-2">

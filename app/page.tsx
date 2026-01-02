@@ -99,8 +99,7 @@ export default function Home() {
           </div>
           <div className="font-doto">• • •</div>
           <p className="font-light md:text-lg text-sm">
-            Full Stack Software Engineer
-            {/* at{" "}<a href="https://theclubspot.com/" target="_blank" className="hover:bg-rose-600 underline decoration-dotted">Clubspot</a> */}
+            Full Stack Software Engineer at{" "}<a href="https://theclubspot.com/" target="_blank" className="hover:bg-rose-600 underline decoration-dotted">Clubspot</a>
           </p>
           <button
             className="cursor-pointer p-3 rounded-full hover:bg-stone-200/20 mt-16 animate-bounce transition-colors"
@@ -175,8 +174,12 @@ export default function Home() {
                 onClick={handleImageClick}
                 src={stache ? "/images/me/gustave-montana-stache.jpg" : "/images/me/gustave-montana.jpg"}
                 alt="Me"
-                className="relative rounded-2xl z-10 scale-85 shadow-lg"
+                className="relative rounded-2xl z-10 scale-85 drop-shadow-lg hover:drop-shadow-xl transition-shadow"
                 whileTap={{ scale: 0.96 }}
+                whileHover={{
+                  scale: 1.04,
+                  rotate: 2,
+                }}
               />
               <svg
                 viewBox="0 0 200 200"
@@ -187,19 +190,15 @@ export default function Home() {
             </div>
             <div className="max-w-3xl space-y-6">
               <Paragraph>
-                Welcome to my website, I hope you like it! I graduated from{" "}
+                Welcome to my website, I hope you like it! I&apos;m a full stack software engineer at Clubspot, in San Francisco. I graduated from{" "}
                 <a
                   className="hover:underline text-rose-600 cursor-pointer"
                   href="https://www.wpi.edu/academics/departments/computer-science"
                   target="_blank"
                 >
                   Worcester Polytechnic Institute (WPI)
-                </a>{" "}
-                in May 2025 with a BS in Computer Science and a minor in Data Science, and I&apos;m looking to start my career
-                in software engineering. Through my personal and academic experience, I&apos;ve found a passion for UI/UX
-                design. I find that front-end design and development falls at the intersection of art and technology, and I
-                really enjoy the challenge of creating something new, unique, and beautiful while keeping it functional and
-                user-friendly.
+                </a>{
+                " "}in May 2025 with a B.S. in Computer Science and a minor in Data Science.
               </Paragraph>
               <Paragraph>
                 I am skilled in front-end and back-end technologies; I specialize in creating solutions using TypeScript,
