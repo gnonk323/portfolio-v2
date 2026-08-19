@@ -119,12 +119,12 @@ export default function Home() {
             </a>
           </div>
           <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-6 gap-4 my-8">
-            <ProjectCard
+            {/* <ProjectCard
               title="MonkeyWrench"
               description="Dual-Portal Automotive Repair Management System for an auto repair shop in Denver, CO, designed to streamline their repair process and improve transparency with the customer."
               date="2025"
               href="/monkeywrench"
-            />
+            /> */}
             <ProjectCard
               title="Hospital Kiosk for BWH"
               description="Prototype Kiosk Web App for Brigham and Women's Hospital in Boston, MA and presented to hospital stakeholders. Capable of pathfinding and so much more!"
@@ -137,12 +137,12 @@ export default function Home() {
               date="2024"
               href="/dct"
             />
-            <ProjectCard
+            {/* <ProjectCard
               title="Consensus"
               description="Daily game where you rank 4 things and see if you can guess the most common answer."
               date="2025"
               href="/consensus"
-            />
+            /> */}
             <ProjectCard
               title="Random Monkeys"
               description="Shuffle monkey pictures (courtesy of Unsplash) and save your favorites to your monkey library."
@@ -150,13 +150,13 @@ export default function Home() {
               href="https://monkeys.gusmontana.com"
               newTab
             />
-            <ProjectCard
+            {/* <ProjectCard
               title="Epic Pass Dashboard"
               description="Up-to-date information on snow conditions and weather for each of the Vail-owned ski mountains in New England."
               date="2025"
               href="https://epicdash.gusmontana.com"
               newTab
-            />
+            /> */}
           </div>
           <a href="https://github.com/gnonk323/portfolio-v2" target="_blank">
             <Button className="md:hidden flex">

@@ -23,8 +23,8 @@ function ProjectDropDownItem({
   return (
     <Link
       className={cn(
-        "px-2 py-1 hover:bg-stone-300 cursor-pointer rounded whitespace-nowrap flex items-center gap-1",
-        isActive && "font-bold bg-stone-300"
+        "px-2 py-1 hover:bg-stone-200 cursor-pointer rounded whitespace-nowrap flex items-center gap-1",
+        isActive && "font-medium bg-stone-200 text-rose-600"
       )}
       href={href}
       target={newTab ? "_blank" : "_self"}
