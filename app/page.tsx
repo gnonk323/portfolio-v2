@@ -110,7 +110,7 @@ export default function Home() {
         </div>
         <div id="projects" className="bg-background md:p-8 py-8 px-4">
           <div className="flex items-center justify-between">
-            <h2 className="font-doto font-bold text-3xl">PROJECTS</h2>
+            <h2 className="font-doto font-bold text-3xl">(some) PROJECTS</h2>
             <a href="https://github.com/gnonk323/portfolio-v2" target="_blank">
               <Button className="md:flex hidden">
                 This site is open source on GitHub!
@@ -131,24 +131,24 @@ export default function Home() {
               date="2024"
               href="/kiosk"
             />
-            <ProjectCard
-              title="IQP Data Collection Tool"
-              description="An app for collecting various types of data in a team, designed for WPI's own IQP study abroad program. Geotagging, AI transcription, file storage, and more."
-              date="2024"
-              href="/dct"
-            />
             {/* <ProjectCard
               title="Consensus"
               description="Daily game where you rank 4 things and see if you can guess the most common answer."
               date="2025"
               href="/consensus"
-            /> */}
+              /> */}
             <ProjectCard
               title="Random Monkeys"
               description="Shuffle monkey pictures (courtesy of Unsplash) and save your favorites to your monkey library."
               date="2025"
               href="https://monkeys.gusmontana.com"
               newTab
+            />
+            <ProjectCard
+              title="IQP Data Collection Tool"
+              description="An app for collecting various types of data in a team, designed for WPI's own IQP study abroad program. Geotagging, AI transcription, file storage, and more."
+              date="2024"
+              href="/dct"
             />
             {/* <ProjectCard
               title="Epic Pass Dashboard"
@@ -190,15 +190,25 @@ export default function Home() {
             </div>
             <div className="max-w-3xl space-y-6">
               <Paragraph>
-                Welcome to my website, I hope you like it! I&apos;m a full stack software engineer at Clubspot, in San Francisco. I graduated from{" "}
+                Welcome to my website, I hope you like it! I graduated from{" "}
                 <a
                   className="hover:underline text-rose-600 cursor-pointer"
                   href="https://www.wpi.edu/academics/departments/computer-science"
                   target="_blank"
                 >
                   Worcester Polytechnic Institute (WPI)
-                </a>{
-                " "}in May 2025 with a B.S. in Computer Science and a minor in Data Science.
+                </a>
+                {" "}in May 2025 with a B.S. in Computer Science and a minor in Data Science.
+                Now I'm a full stack software engineer at{" "}
+                <a
+                  className="hover:underline text-rose-600 cursor-pointer"
+                  href="https://theclubspot.com"
+                  target="_blank"
+                >
+                  Clubspot
+                </a>
+                {" "}in San Francisco, working on cloud-native enterprise 
+                infrastructure and next-gen club management software.
               </Paragraph>
               <Paragraph>
                 I am skilled in front-end and back-end technologies; I specialize in creating solutions using TypeScript,
@@ -210,7 +220,7 @@ export default function Home() {
                 data preprocessing, feature engineering, and model training using libraries such as Pandas, NumPy, Scikit-learn,
                 and TensorFlow.
               </Paragraph>
-              <Paragraph>I love to ski, sail, fish, bike, play video games, write code, and learn new things.</Paragraph>
+              <Paragraph>In my free time I love to ski, sail, bike, play video games, write code, and learn new things.</Paragraph>
               <div>
                 <Button>
                   <Link href={"/adventures"}>Browse my adventures gallery</Link>
