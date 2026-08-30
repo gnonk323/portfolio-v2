@@ -3,11 +3,11 @@
 import * as si from "simple-icons";
 import { useState, useEffect, useRef } from "react";
 import React from "react";
-import ParticlesBackground from "./ParticlesBackground";
 import NavBar from "./NavBar";
 import { ArrowUpRight } from "lucide-react";
 import { TechStackBadge } from "./Cards";
 import { MainHeading, SubHeading } from "./Typography";
+import ContactFooter from "./ContactFooter";
 
 interface ProjectPageProps {
   title: string;
@@ -49,7 +49,6 @@ export default function ProjectPage({
 
   return (
     <>
-      <ParticlesBackground />
       <NavBar projectTitle={title} showProjectTitle={showProjectTitle} />
 
       <div
@@ -58,7 +57,7 @@ export default function ProjectPage({
       >
         <section
           ref={heroRef}
-          className="lg:min-h-screen snap-start bg-background font-sans relative z-10 md:p-8 p-4 md:pt-20 pt-16"
+          className="lg:min-h-screen snap-start bg-background font-sans relative z-10 p-8 pt-20"
         >
           <div className="space-y-6">
             <SubHeading className="m-0">PROJECT</SubHeading>
@@ -94,11 +93,12 @@ export default function ProjectPage({
         {React.Children.map(children, (child, i) => (
           <section
             key={`section-${i}`}
-            className="lg:min-h-screen snap-start flex items-center justify-center bg-background font-sans relative z-10 md:p-8 p-4"
+            className="lg:min-h-screen snap-start flex items-center justify-center bg-background font-sans relative z-10 p-8"
           >
             {child}
           </section>
         ))}
+
       </div>
     </>
   );

@@ -43,7 +43,7 @@ export function Paragraph({
   return (
     <p
       className={cn(
-        "font-sans md:text-base text-sm leading-relaxed",
+        "font-sans md:text-base text-sm leading-relaxed text-stone-700",
         className,
       )}
     >

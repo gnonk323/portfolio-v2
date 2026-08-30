@@ -19,7 +19,7 @@ export function ProjectCard({
 }) {
   return (
     <Link
-      className="rounded p-4 border border-stone-300 text-left flex flex-col justify-between group ring-0 hover:ring-4 ring-stone-400/40 transition-all"
+      className="rounded p-4 border border-stone-300 text-left flex flex-col justify-between group hover:border-stone-400 hover:shadow-sm hover:rounded-xl transition-all"
       href={href}
       target={newTab ? "_blank" : "_self"}
     >
@@ -36,8 +36,8 @@ export function ProjectCard({
         ) : (
           <div className="text-stone-500">{date}</div>
         )}
-        <div className="flex opacity-0 group-hover:opacity-100 rounded-full bg-foreground text-background py-1 px-3 items-center gap-1 cursor-pointer transition-all hover:drop-shadow-md">
-          Read More
+        <div className="flex opacity-0 group-hover:opacity-100 rounded-full bg-foreground text-background py-1 px-3 items-center gap-1 cursor-pointer transition-all hover:drop-shadow-md -translate-x-4 group-hover:translate-x-0">
+          { newTab ? "Visit" : "Read More" }
           <ArrowRight className="h-4 w-4" />
         </div>
       </div>
@@ -70,10 +70,10 @@ export function FeatureCard({
 }) {
   return (
     <div
-      className="flex flex-col justify-between p-6 border border-stone-300 rounded cursor-pointer transition-all hover:ring-4 hover:ring-stone-300"
+      className="flex flex-col justify-between group p-6 border border-stone-300 rounded cursor-pointer transition-all hover:border-stone-400 hover:shadow-sm hover:rounded-xl"
       onClick={onClickAction}
     >
-      <div className="md:space-y-4 space-y-2">
+      <div className="space-y-2">
         <h4 className="md:text-xl text-base font-bold">{title}</h4>
         <Paragraph>{description}</Paragraph>
       </div>

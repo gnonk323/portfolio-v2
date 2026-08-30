@@ -1,4 +1,3 @@
-import ParticlesBackground from "@/components/ParticlesBackground";
 import NavBar from "@/components/NavBar";
 import { AdventureImage, type ImageTile } from "@/components/Visuals";
 import { MainHeading, Paragraph } from "@/components/Typography";
@@ -147,11 +146,10 @@ export default function AdventuresPage() {
 
   return (
     <>
-      <ParticlesBackground />
       <NavBar />
 
       <div className="h-screen overflow-y-scroll">
-        <div className="min-h-screen snap-start bg-background font-sans relative z-10 md:p-8 p-4 md:pt-20 pt-16">
+        <div className="min-h-screen snap-start bg-background font-sans relative z-10 p-8 pt-20">
           <MainHeading>Adventures</MainHeading>
           <Paragraph>Just a bunch of cool pictures I like :)</Paragraph>
           <div className="columns-1 md:columns-2 gap-4 mt-8 lg:columns-3">

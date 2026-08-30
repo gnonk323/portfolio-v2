@@ -99,7 +99,7 @@ export default function NavBar({
   return (
     <>
       <div className="font-sans fixed top-0 w-screen py-4 sm:px-8 px-4 flex items-center justify-between z-20 bg-background backdrop-blur-md border-b border-stone-300">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 flex-1">
           <Link className="font-bold font-doto md:text-xl sm:text-base" href="/">
             Gustave Montana
           </Link>
@@ -118,41 +118,42 @@ export default function NavBar({
         </div>
 
         {/* Desktop navigation */}
-        <div className="items-center gap-2 hidden sm:flex">
-          <Link className="cursor-pointer px-3 py-0.5" href="/">
+        <div className="items-center justify-center gap-2 hidden md:flex flex-1">
+          <Link className="cursor-pointer px-3 py-0.5 ring-0 hover:bg-stone-200 rounded-lg transition" href="/">
             Home
           </Link>
 
-          {/* Projects dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={openProjectMenu}
-            onMouseLeave={closeProjectMenu}
-          >
-            <div className="flex gap-2 items-center cursor-pointer px-3 py-0.5">
-              Projects
-              <ChevronDown size={16} />
-            </div>
-
-            <ProjectDropDown open={projectMenuOpen} pathname={pathname} />
-          </div>
-
           <Link
-            className="cursor-pointer px-3 py-0.5"
+            className="cursor-pointer px-3 py-0.5 ring-0 hover:bg-stone-200 rounded-lg transition"
             href="/adventures"
           >
             Adventures
           </Link>
 
-          <Link
+          <div
+            className="relative group"
+            onMouseEnter={openProjectMenu}
+            onMouseLeave={closeProjectMenu}
+          >
+            <div className="flex gap-2 items-center cursor-pointer px-3 py-0.5 ring-0 group-hover:bg-stone-200 rounded-lg transition">
+              Projects
+              <ChevronDown size={16} />
+            </div>
+            <ProjectDropDown open={projectMenuOpen} pathname={pathname} />
+          </div>
+
+          {/* <Link
             className="flex gap-1 items-center cursor-pointer px-3 py-0.5"
             href="/gustave-montana-resume.pdf"
             target="_blank"
           >
             Resume
             <ArrowUpRight size={16} />
-          </Link>
+          </Link> */}
+          
+        </div>
 
+        <div className=" hidden md:flex flex-1 justify-end">
           <Button className="py-0.5 px-3 cursor-pointer" onClick={() => setShowContactDialog(true)}>
             Contact
           </Button>
@@ -162,7 +163,7 @@ export default function NavBar({
         <button
           onClick={() => setShowMenu((prev) => !prev)}
           aria-label="Toggle menu"
-          className="sm:hidden"
+          className="md:hidden"
         >
           {showMenu ? <X size={20} /> : <Menu size={20} />}
         </button>

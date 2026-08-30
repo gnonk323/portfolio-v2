@@ -41,7 +41,7 @@ export default function FeatureSection({
         >
           <SubHeading>{heading}</SubHeading>
           <div
-            className={`grid lg:grid-cols-${columns} grid-cols-1 md:gap-8 gap-4`}
+            className={`grid lg:grid-cols-${columns} grid-cols-1 gap-4`}
           >
             {features.map((feature) => (
               <FeatureCard
