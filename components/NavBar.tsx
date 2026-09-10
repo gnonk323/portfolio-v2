@@ -37,7 +37,7 @@ function ProjectDropDownItem({
 
 function ProjectDropDown({ open, pathname }: { open: boolean; pathname: string }) {
   const links: { name: string; href: string; newTab?: boolean }[] = [
-    { name: "MonkeyWrench", href: "/monkeywrench" },
+    // { name: "MonkeyWrench", href: "/monkeywrench" },
     { name: "Hospital Kiosk", href: "/kiosk" },
     { name: "Data Collection Tool", href: "/dct" },
     { name: "Consensus", href: "/consensus" },
@@ -98,7 +98,7 @@ export default function NavBar({
 
   return (
     <>
-      <div className="font-sans fixed top-0 w-screen py-4 sm:px-8 px-4 flex items-center justify-between z-20 bg-background backdrop-blur-md border-b border-stone-300">
+      <div className="font-sans fixed top-0 w-screen sm:px-8 px-4 h-18 flex items-center justify-between z-20 bg-background backdrop-blur-md border-b border-stone-300">
         <div className="flex items-center gap-4 flex-1">
           <Link className="font-bold font-doto md:text-xl sm:text-base" href="/">
             Gustave Montana

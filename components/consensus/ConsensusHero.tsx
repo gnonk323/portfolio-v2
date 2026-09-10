@@ -2,15 +2,18 @@ import { Paragraph, SubHeading } from "../Typography";
 
 export default function Hero() {
   return (
-    <div className="flex grow lg:justify-between lg:items-center flex-col lg:flex-row lg:m-0 mb-6">
-      <img
-        src={"/images/consensus/consensusMOCK.png"}
-        alt="Consensus landing"
-        className="max-h-[70vh] w-auto"
-        loading="eager"
-      />
-      <div className="lg:space-y-8 space-y-6 lg:px-32 lg:pt-0 pt-8">
-        <SubHeading>Overview</SubHeading>
+    <section className="flex grow flex-col items-center justify-center gap-10 sm:gap-12 lg:flex-row lg:items-center lg:justify-around lg:gap-12 lg:py-0">
+      <div className="flex w-full justify-center lg:w-[55%]">
+        <img
+          src={"/images/consensus/consensusMOCK.png"}
+          alt="Consensus landing"
+          className="h-auto max-h-[55vh] w-auto max-w-[80%] object-contain sm:max-h-[60vh] sm:max-w-[85%] lg:max-h-[50vh] lg:max-w-full"
+          loading="eager"
+        />
+      </div>
+
+      <div className="w-full max-w-2xl space-y-6 px-0 lg:w-[45%] lg:max-w-xl lg:space-y-8 lg:px-8 xl:px-12">
+      <SubHeading>Overview</SubHeading>
         <div className="space-y-6">
           <Paragraph>
             Consensus is a game where every day there are 4 words that fit into
@@ -36,6 +39,6 @@ export default function Hero() {
           give you a demo!
         </Paragraph>
       </div>
-    </div>
+    </section>
   );
 }

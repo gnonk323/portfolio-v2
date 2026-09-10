@@ -149,7 +149,7 @@ export default function AdventuresPage() {
       <NavBar />
 
       <div className="h-screen overflow-y-scroll">
-        <div className="min-h-screen snap-start bg-background font-sans relative z-10 p-8 pt-20">
+        <div className="min-h-screen snap-start bg-background font-sans relative z-10 p-8 mt-18">
           <MainHeading>Adventures</MainHeading>
           <Paragraph>Just a bunch of cool pictures I like :)</Paragraph>
           <div className="columns-1 md:columns-2 gap-4 mt-8 lg:columns-3">

@@ -24,41 +24,24 @@ export default function ProjectPage({
   heroComponent,
   children,
 }: ProjectPageProps) {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const heroRef = useRef<HTMLElement | null>(null);
   const [showProjectTitle, setShowProjectTitle] = useState(false);
 
   useEffect(() => {
-    const root = containerRef.current;
-    const hero = heroRef.current;
-    if (!root || !hero) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        // When the hero is no longer intersecting the scroll container, show the project title
-        setShowProjectTitle(!entry.isIntersecting);
-      },
-      { root, threshold: 0.1 },
-    );
-
-    observer.observe(hero);
-
-    return () => observer.disconnect();
+    const handleScroll = () => {
+      setShowProjectTitle(window.scrollY > 80);
+    };
+  
+    window.addEventListener("scroll", handleScroll, { passive: true });
+  
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <>
       <NavBar projectTitle={title} showProjectTitle={showProjectTitle} />
 
-      <div
-        ref={containerRef}
-        className="h-screen overflow-y-scroll lg:snap-y lg:snap-mandatory"
-      >
-        <section
-          ref={heroRef}
-          className="lg:min-h-screen snap-start bg-background font-sans relative z-10 p-8 pt-20"
-        >
+      <div>
+        <section className="lg:max-h-screen bg-background font-sans relative z-10 mt-18 pt-8 px-8 pb-16">
           <div className="space-y-6">
             <SubHeading className="m-0">PROJECT</SubHeading>
             <div className="flex md:items-center md:justify-between flex-col md:flex-row">
@@ -67,7 +50,7 @@ export default function ProjectPage({
                 {links.map((link, i) => (
                   <a
                     key={`project-link-${i}`}
-                    className="cursor-pointer hover:underline flex items-center gap-1"
+                    className="cursor-pointer hover:underline flex items-center gap-1 text-right"
                     href={link.url}
                     target="_blank"
                   >
@@ -93,12 +76,15 @@ export default function ProjectPage({
         {React.Children.map(children, (child, i) => (
           <section
             key={`section-${i}`}
-            className="lg:min-h-screen snap-start flex items-center justify-center bg-background font-sans relative z-10 p-8"
+            className="flex items-center justify-center bg-background border-t border-stone-300 border-dotted font-sans relative z-10 px-8 py-16"
           >
             {child}
           </section>
         ))}
 
+        <div className="border-t border-dashed border-stone-300">
+          <ContactFooter />
+        </div>
       </div>
     </>
   );

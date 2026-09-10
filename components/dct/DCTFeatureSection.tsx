@@ -6,7 +6,6 @@ export default function DCTFeatureSection() {
   return (
     <FeatureSection
       heading="Demos"
-      columns={1}
       features={[
         {
           title: "Create Project",

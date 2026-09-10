@@ -159,7 +159,7 @@ export function DemoVideo({ src }: { src: string }) {
 export function DemoImage({ src, alt }: { src: string; alt?: string }) {
   return (
     <div className="p-2 rounded bg-stone-300">
-      <img src={src} alt={alt} className="w-full" />
+      <img src={src} alt={alt} className="w-full pointer-events-none" />
     </div>
   );
 }

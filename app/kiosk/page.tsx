@@ -36,7 +36,6 @@ export default function KioskPage() {
       heroComponent={<Hero />}
     >
       <div className="lg:max-w-7xl w-full lg:space-y-12 space-y-6">
-        <Separator className="lg:hidden block" />
         <SubHeading>Approach</SubHeading>
         <Paragraph className="m-0">
           Each team used the <span className="font-semibold">Agile</span> software development approach, with{" "}
@@ -69,13 +68,11 @@ export default function KioskPage() {
             Retrospective
           </div>
         </div>
-        <Separator className="lg:hidden block mt-8" />
       </div>
 
       <KioskFeatureSection />
 
       <div className="max-w-7xl w-full lg:space-y-12 space-y-6">
-        <Separator className="lg:hidden block mb-8" />
         <SubHeading>Key Takeaways</SubHeading>
         <div className="lg:space-y-6 space-y-4">
           <div className="flex items-start gap-6">
@@ -119,8 +116,6 @@ export default function KioskPage() {
             was a great opportunity to throw myself into a large UI undertaking. Overall, I’m really proud of the work we did!
           </Paragraph>
         </div>
-
-        <Separator className="lg:hidden block mt-8" />
 
         <NextProjectButton name="WPI IQP Data Collection Tool" href={"/dct"} />
       </div>

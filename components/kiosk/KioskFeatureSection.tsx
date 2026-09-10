@@ -128,7 +128,7 @@ function Pathfinding() {
                 key={"path-img"}
                 src="/images/kiosk/pathfinding.png"
                 alt="Pathfinding Screenshot"
-                className="w-full"
+                className="w-full pointer-events-none"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
@@ -141,7 +141,7 @@ function Pathfinding() {
                   key={"path-gif"}
                   src={"/images/kiosk/pathfinding-demo.gif"}
                   alt="Pathfinding Demo"
-                  className="w-full"
+                  className="w-full  pointer-events-none"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5 }}
