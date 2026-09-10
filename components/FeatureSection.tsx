@@ -197,7 +197,6 @@ export default function FeatureSection({
                 border-foreground/10
                 bg-background
                 p-5
-                shadow-sm
                 sm:w-[78vw]
                 sm:p-7
                 lg:w-[60vw]
