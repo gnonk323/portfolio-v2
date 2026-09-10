@@ -1,7 +1,7 @@
 "use client";
 
 import * as si from "simple-icons";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 import NavBar from "./NavBar";
 import { ArrowUpRight } from "lucide-react";

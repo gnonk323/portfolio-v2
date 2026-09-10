@@ -133,7 +133,7 @@ export default function FeatureSection({
             aria-label="Previous feature"
             className="
               flex h-10 w-10 items-center justify-center
-              rounded-full border border-foreground/20
+              rounded-full border border-stone-300
               transition
               hover:bg-foreground hover:text-background
               disabled:pointer-events-none
@@ -150,7 +150,7 @@ export default function FeatureSection({
             aria-label="Next feature"
             className="
               flex h-10 w-10 items-center justify-center
-              rounded-full border border-foreground/20
+              rounded-full border border-stone-300
               transition
               hover:bg-foreground hover:text-background
               disabled:pointer-events-none

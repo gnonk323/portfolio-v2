@@ -3,7 +3,6 @@ import * as si from "simple-icons";
 import KioskFeatureSection from "@/components/kiosk/KioskFeatureSection";
 import { NextProjectButton } from "@/components/Button";
 import { Paragraph, SubHeading } from "@/components/Typography";
-import Separator from "@/components/Separator";
 
 import ProjectPage from "@/components/ProjectPage";
 import Hero from "@/components/kiosk/KioskHero";
