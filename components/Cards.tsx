@@ -47,7 +47,7 @@ export function ProjectCard({
 
 export function TechStackBadge({ name, svgPath, icon }: { name: string; svgPath?: string; icon?: React.ReactNode }) {
   return (
-    <div className="rounded font-mono border border-stone-300 px-2 py-1 hover:border-stone-500 transition-colors flex items-center gap-2 font-semibold cursor-default md:text-base text-sm">
+    <div className="rounded font-mono border border-stone-300 px-2 py-1 hover:border-rose-600 hover:text-rose-600 hover:fill-rose-600 transition-colors flex items-center gap-2 font-semibold cursor-default md:text-base text-sm">
       {svgPath && (
         <svg role="img" viewBox="0 0 24 24" width="16" height="16">
           <path d={svgPath} />
